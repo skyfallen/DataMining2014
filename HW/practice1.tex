@@ -12,6 +12,7 @@
 \usepackage{dcolumn}
 \usepackage{pdflscape}
 \usepackage{hyperref}
+\usepackage{framed}
 
 \setlength\parindent{0pt} % Removes all indentation from paragraphs
 
@@ -50,23 +51,39 @@
 Use your own experience and knowledge you have gained during the lecture to come up with the problem that can be solved by the means of Data Mining. Describe it. Make an example of the data. What are the features (variables)? How many observations (size of the data) needed to solve it? Explain what is the type of the data (temporal, spatial, stream, etc.), type of your features? What are the techniques and approaches that can be used to solve it?  
 
 \section*{Task 2}
-Read \href{http://mathwiki.cs.ut.ee/probability_theory}{Probability theory} sections 1, 2 and 3 from \href{http://mathwiki.cs.ut.ee/start}{MathWiki} web-site and solve all the included problems. Be fair and report number of problems you solved correctly.
+Read the first chapter on \href{http://mathwiki.cs.ut.ee/probability_theory}{Probability theory} from \href{http://mathwiki.cs.ut.ee/start}{MathWiki} web-site  We recommend you to solve all the given exercises for training purposes. Play with the simulation of a dice. Explain how the increase of rolling times changes probability distribution of the dice
 
 \section*{Task 3}
-Choose your favorite visualization tool, play around with it and report few fancy pictures produced by this tool, e.g. \href{http://docs.ggplot2.org/current/}{ggplot2} (in R), Excel (hope you manage to find it yourself), \href{https://code.google.com/apis/ajax/playground/?type=visualization#motion_chart}{Google Code Playground}, \href{http://www.gnuplot.info/}{GNU plot}, \href{http://www.gnuplot.info/}{matplotlib} (for Python) etc. 
+Now read about \href{http://mathwiki.cs.ut.ee/probability/02_multiple_event_probability}{probability of two events}. Solve the following exercise from the page:
+\begin{framed}
+A company makes computer discs. It tested a random sample of discs from a large batch and found that the probability of any disc being defective is 0,025.
+\\
+Bob buys two discs. Calculated the probability that
+\begin{itemize}
+\item both discs are defective;
+\item that only one disc is defective.
+\end{itemize}
+
+The company found 4 defective discs in the sample they tested. How many discs were likely tested?
+\end{framed}
+% \href{http://docs.ggplot2.org/current/}{ggplot2} (in R), Excel (hope you manage to find it yourself), \href{https://code.google.com/apis/ajax/playground/?type=visualization#motion_chart}{Google Code Playground}, \href{http://www.gnuplot.info/}{GNU plot}, \href{http://www.gnuplot.info/}{matplotlib} (for Python) etc. 
 
 \section*{Task 4}
-\label{sec:titanic}
-Take a look at \href{http://courses.education.illinois.edu/EdPsy589/lectures/titanic3.xls}{Titanic dataset}, and its \href{http://www.kaggle.com/c/titanic-gettingStarted/data}{description}. Analyze the data using your favorite tool:
-\begin{itemize}
-\item describe types of features
-\item characterize them (frequency tables, variance, mean and etc.)
-\item find interesting patterns and visualize them
-\end{itemize} 
-
+%\label{sec:titanic}
+%Take a look at \href{http://courses.education.illinois.edu/EdPsy589/lectures/titanic3.xls}{Titanic dataset}, and its \href{http://www.kaggle.com/c/titanic-gettingStarted/data}{description}. Analyze the data using your favorite tool:
+%\begin{itemize}
+%\item describe types of features
+%\item characterize them (frequency tables, variance, mean and etc.)
+%\item find interesting patterns and visualize them
+%\end{itemize} 
+Read chapter on \href{http://mathwiki.cs.ut.ee/probability/02_multiple_event_probability}{conditional probability} in order to answer the following question:
+\begin{framed}
+At the exam there is 0.8 probability that student has prepared and 0.2 that he has not prepared. Those who are prepared have 0.7 probability of success, those who have not prepared have 0.4 probability of success. What is the probability that randomly selected student will succeed?
+\end{framed}
 \section*{Task 5}
 Consider an example of a recommendation engine e.g. Amazon online shop, make an educated guess on how this kind of system is built. Find several weak points in Amazon recommendation engine that you would like to improve, explain.
 
-\section*{Task 6 (1pt)}
-Use the dataset from Task 4 and find a way to visualize a meaningful (interesting) dependence between any three features and explain it, e.g. place together ``age'', ``class'' and ``survival indicator'' on the same chart.
+\section*{Task 6 (2pt)}
+%Use the dataset from Task 4 and find a way to visualize a meaningful (interesting) dependence between any three features and explain it, e.g. place together ``age'', ``class'' and ``survival indicator'' on the same chart.
+What is the probability to get 9 or 10 heads when you throw a fair coin 10 times? What is the probability to get 70 or more heads when you throw a fair coin 100 times? Conduct a computational experiment by generating 10,000 times such sequences of 10 coin tosses or 100 coin tosses.
 \end{document} 
