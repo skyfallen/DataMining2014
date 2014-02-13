@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.9.25)  13 FEB 2014 20:40
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.9.25)  13 FEB 2014 22:52
 entering extended mode
 **C:/Tartu*Ulikool/Data*Mining/DataMining2014/HW/practice1.tex
 ("C:/Tartu Ulikool/Data Mining/DataMining2014/HW/practice1.tex"
@@ -399,35 +399,44 @@ LaTeX Info: Redefining \nameref on input line 46.
 ("C:\Tartu Ulikool\Data Mining\DataMining2014\HW\practice1.out")
 ("C:\Tartu Ulikool\Data Mining\DataMining2014\HW\practice1.out")
 \@outlinefile=\write3
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 56.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 62.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 62.
  [1
 
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 56.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 72.
+ [2]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 72.
 
 ("C:\Tartu Ulikool\Data Mining\DataMining2014\HW\practice1.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 56.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 56.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 72.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 72.
 Package rerunfilecheck Info: File `practice1.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 56.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 72.
  ) 
 Here is how much of TeX's memory you used:
- 8407 strings out of 493921
- 127149 string characters out of 3147270
- 256500 words of memory out of 3000000
- 11610 multiletter control sequences out of 15000+200000
+ 8434 strings out of 493921
+ 127551 string characters out of 3147270
+ 258500 words of memory out of 3000000
+ 11630 multiletter control sequences out of 15000+200000
  8255 words of font info for 30 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 42i,6n,41p,511b,321s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 42i,6n,41p,517b,323s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Program F
 iles/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKT
 eX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on practice1.pdf (1 page, 64356 bytes).
+nts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
+/public/amsfonts/cm/cmsy10.pfb>
+Output written on practice1.pdf (2 pages, 78729 bytes).
 PDF statistics:
- 36 PDF objects out of 1000 (max. 8388607)
- 5 named destinations out of 1000 (max. 500000)
+ 55 PDF objects out of 1000 (max. 8388607)
+ 9 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
