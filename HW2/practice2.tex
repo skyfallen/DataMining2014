@@ -49,7 +49,6 @@
 \begin{document}
 
 \maketitle % Insert the title, author and date
-\section*{Task 1}
 \begin{center}
     \begin{tabular}{| c | c | l|}
     \hline
@@ -68,6 +67,7 @@
 	6 & 3478& \{Panadol, Sudafed, Ibuprofen\}\\ \hline
  \end{tabular}
 \end{center}
+\section*{Task 1}
 \begin{enumerate}
 \item Compute the support and support count for itemsets \{Aspirin\}, \{Tylenol, Cepacol\}, \{Aspirin, Ibuprofen, Panadol\} by treating each transaction ID as a market basket.
 \item Compute the confidence for the following association rules: \{Aspirin, Vitamin C $\rightarrow$ Sudafed\}, \{Aspirin $\rightarrow$ Vitamin C\}, \{Vitamin C $\rightarrow$ Aspirin\}. Why the results for last two rules are different?
@@ -78,10 +78,11 @@
 Write down all the steps of Apriori algorithm on the above data set under the support count  threshold $s_{min} > 3$. How many steps of Apriori algorithm you needed to perform? Draw a diagram showing all possible combinations of the items (e.g. lecture slide number 68). Mark all maximal, closed and infrequent items on this diagram.
 
 \section*{Task 3}
-Build an FP-tree  using data set from exercise 1. Explain all the steps, draw a final tree. How many transactions contain \{Aspirin\} and \{Cepacol\}?
+Construct an FP-tree using data set from Task 1 (use support count  threshold $s_{min} > 3$) . Explain all the steps of the tree construction and draw a resulting tree. Based on this tree answer the questions: how many transactions contain \{Aspirin\} and \{Cepacol\}? How many transactions were made in total?
 % \href{http://docs.ggplot2.org/current/}{ggplot2} (in R), Excel (hope you manage to find it yourself), \href{https://code.google.com/apis/ajax/playground/?type=visualization#motion_chart}{Google Code Playground}, \href{http://www.gnuplot.info/}{GNU plot}, \href{http://www.gnuplot.info/}{matplotlib} (for Python) etc. 
 
 \section*{Task 4}
+Simulate frequent pattern enumeration based on the FP-tree constructed in the previous exercise. Report all the frequent patterns. 
 %\label{sec:titanic}
 %Take a look at \href{http://courses.education.illinois.edu/EdPsy589/lectures/titanic3.xls}{Titanic dataset}, and its \href{http://www.kaggle.com/c/titanic-gettingStarted/data}{description}. Analyze the data using your favorite tool:
 %\begin{itemize}
@@ -89,10 +90,7 @@ Build an FP-tree  using data set from exercise 1. Explain all the steps, draw a 
 %\item characterize them (frequency tables, variance, mean and etc.)
 %\item find interesting patterns and visualize them
 %\end{itemize} 
-Read chapter on \href{http://mathwiki.cs.ut.ee/probability/02_multiple_event_probability}{conditional probability} in order to answer the following question:
-\begin{framed}
-At the exam there is 0.8 probability that student has prepared and 0.2 that he has not prepared. Those who are prepared have 0.7 probability of success, those who have not prepared have 0.4 probability of success. What is the probability that randomly selected student will succeed?
-\end{framed}
+
 \section*{Task 5}
 Consider an example of a recommendation engine e.g. Amazon online shop, make an educated guess on how this kind of system is built. Find several weak points in Amazon recommendation engine that you would like to improve, explain.
 
