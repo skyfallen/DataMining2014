@@ -1,0 +1,102 @@
+\documentclass{article}
+
+\usepackage{courier}
+\usepackage{graphicx} % Required for the inclusion of images
+\usepackage{listings}
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{subcaption}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage[toc,page]{appendix}
+\usepackage{dcolumn}
+\usepackage{pdflscape}
+\usepackage{hyperref}
+\usepackage{framed}
+\usepackage[english]{babel}
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+\renewcommand{\labelenumi}{\alph{enumi}.} % Make numbering in the enumerate environment by letter rather than number (e.g. section 6)
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=R,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true
+  tabsize=3
+}
+
+\title{Data Mining\\Homework Assignment \#2} % Title
+
+\author{Dmytro \textsc{Fishman}, Anna \textsc{Leontjeva} and Jaak \textsc{Vilo}} % Author name
+
+%\date{23-09-2013} % Date for the report
+
+\begin{document}
+
+\maketitle % Insert the title, author and date
+\section*{Task 1}
+\begin{center}
+    \begin{tabular}{| c | c | l|}
+    \hline
+    CustomerID & TransactionID& BasketContent \\ \hline
+    	1 & 1234 & \{Aspirin, Panadol\}\\ \hline
+    	1 & 4234 & \{Aspirin, Sudafed\}\\ \hline
+    	2 & 9373& \{Tylenol, Cepacol\}\\ \hline
+	2 & 9843& \{Aspirin, Vitamin C, Sudafed\}\\ \hline 
+	3 & 2941& \{Tylenol, Cepacol\}\\ \hline  
+	3 & 2753& \{Aspirin, Cepacol\}\\ \hline
+	4 & 9643& \{Aspirin, Vitamin C\}\\ \hline
+	4 & 9691& \{Aspirin, Ibuprofen, Panadol\}\\ \hline
+	5 & 5313& \{Panadol, Vitamin C\}\\ \hline
+	5 & 1003& \{Tylenol, Cepacol, Ibuprofen\}\\ \hline
+	6 & 5636& \{Tylenol, Panadol, Cepacol\}\\ \hline
+	6 & 3478& \{Panadol, Sudafed, Ibuprofen\}\\ \hline
+ \end{tabular}
+\end{center}
+\begin{enumerate}
+\item Compute the support and support count for itemsets \{Aspirin\}, \{Tylenol, Cepacol\}, \{Aspirin, Ibuprofen, Panadol\} by treating each transaction ID as a market basket.
+\item Compute the confidence for the following association rules: \{Aspirin, Vitamin C $\rightarrow$ Sudafed\}, \{Aspirin $\rightarrow$ Vitamin C\}, \{Vitamin C $\rightarrow$ Aspirin\}. Why the results for last two rules are different?
+\item List all the frequent itemsets under the support count threshold $s_{min} = 3$.
+\item What does the anti-monotonicity property of a support imply? Give an example using the above data set. 
+\end{enumerate}
+\section*{Task 2}
+Write down all the steps of Apriori algorithm on the above data set under the support count  threshold $s_{min} > 3$. How many steps of Apriori algorithm you needed to perform? Draw a diagram showing all possible combinations of the items (e.g. lecture slide number 68). Mark all maximal, closed and infrequent items on this diagram.
+
+\section*{Task 3}
+Build an FP-tree  using data set from exercise 1. How many  
+% \href{http://docs.ggplot2.org/current/}{ggplot2} (in R), Excel (hope you manage to find it yourself), \href{https://code.google.com/apis/ajax/playground/?type=visualization#motion_chart}{Google Code Playground}, \href{http://www.gnuplot.info/}{GNU plot}, \href{http://www.gnuplot.info/}{matplotlib} (for Python) etc. 
+
+\section*{Task 4}
+%\label{sec:titanic}
+%Take a look at \href{http://courses.education.illinois.edu/EdPsy589/lectures/titanic3.xls}{Titanic dataset}, and its \href{http://www.kaggle.com/c/titanic-gettingStarted/data}{description}. Analyze the data using your favorite tool:
+%\begin{itemize}
+%\item describe types of features
+%\item characterize them (frequency tables, variance, mean and etc.)
+%\item find interesting patterns and visualize them
+%\end{itemize} 
+Read chapter on \href{http://mathwiki.cs.ut.ee/probability/02_multiple_event_probability}{conditional probability} in order to answer the following question:
+\begin{framed}
+At the exam there is 0.8 probability that student has prepared and 0.2 that he has not prepared. Those who are prepared have 0.7 probability of success, those who have not prepared have 0.4 probability of success. What is the probability that randomly selected student will succeed?
+\end{framed}
+\section*{Task 5}
+Consider an example of a recommendation engine e.g. Amazon online shop, make an educated guess on how this kind of system is built. Find several weak points in Amazon recommendation engine that you would like to improve, explain.
+
+\section*{Task 6 (2pt)}
+%Use the dataset from Task 4 and find a way to visualize a meaningful (interesting) dependence between any three features and explain it, e.g. place together ``age'', ``class'' and ``survival indicator'' on the same chart.
+What is the probability to get 9 or 10 heads when you throw a fair coin 10 times? What is the probability to get 70 or more heads when you throw a fair coin 100 times? Conduct a computational experiment by generating 10,000 times such sequences of 10 coin tosses or 100 coin tosses.
+\end{document} 
