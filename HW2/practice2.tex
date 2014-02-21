@@ -75,7 +75,7 @@
 \section*{Task 1}
 \begin{enumerate}
 \item For the data from Table \ref{tab:toyexample} compute the support and support count for itemsets \{Aspirin\}, \{Tylenol, Cepacol\}, \{Aspirin, Ibuprofen, Panadol\} by treating each transaction ID as a market basket.
-\item Compute the confidence for the following association rules: \{Aspirin, Vitamin C $\rightarrow$ Sudafed\}, \{Aspirin $\rightarrow$ Vitamin C\}, \{Vitamin C $\rightarrow$ Aspirin\}. Why the results for last two rules are different?
+\item Compute the confidence for the following association rules: \{Aspirin, Vitamin C\} $\rightarrow$ \{Sudafed\}, \{Aspirin\} $\rightarrow$ \{Vitamin C\}, \{Vitamin C\} $\rightarrow$ \{Aspirin\}. Why the results for last two rules are different?
 \item List all the frequent itemsets under the support count threshold $s_{min} = 3$.
 \item What does the anti-monotonicity property of support imply? Give an example using the above data set. 
 \end{enumerate}
@@ -91,8 +91,8 @@ Simulate frequent pattern enumeration based on the FP-tree constructed in the pr
 \section*{Task 5}
 In this task we will get familiar with \href{http://www.r-project.org/}{the statistical computing language R}. Install it. We suggest you to download also the IDE that will make your life much easier: \href{https://www.rstudio.com/}{R studio}. Once you are set up, take a look at the introduction of R from the CRAN page (Manuals $\rightarrow$ An Introduction to R) or just google any basic tutorial. R is an open source and has a very powerful community with plenty of tutorials and websites. Once you feel more comfortable with it, go through the following tutorial, run it, check and report the results, describe and interpret them:
 \lstinputlisting[language=R]{practice2.R}
+Note, when you paste the code from the pdf, some symbols may be copied incorrectly. We suggest you to type the above commands yourself, but in case you are too lazy, use the R script we uploaded for you on the page.  
 
 \section*{Task 6 (2pt)}
-Use the drug dataset \ref{tab:toyexample} (or simulate a similar to it) and repeat the analysis in Task 5 using R. Report the results.
-
+Some rules do not provide extra knowledge as other rules already  contain the information. Such rules are called 'redundant'. Come up with the definition of the redundancy of the rules. Using the script and the data from task 5 tune default parameters so that there are redundant rules in the output. Next, add the "filter" that outputs only non-redundant rules. 
 \end{document} 
