@@ -74,20 +74,19 @@
 \end{table}
 \section*{Task 1}
 \begin{enumerate}
-\item For the data in \ref{tab:toyexample} compute the support and support count for itemsets \{Aspirin\}, \{Tylenol, Cepacol\}, \{Aspirin, Ibuprofen, Panadol\} by treating each transaction ID as a market basket.
+\item For the data from Table \ref{tab:toyexample} compute the support and support count for itemsets \{Aspirin\}, \{Tylenol, Cepacol\}, \{Aspirin, Ibuprofen, Panadol\} by treating each transaction ID as a market basket.
 \item Compute the confidence for the following association rules: \{Aspirin, Vitamin C $\rightarrow$ Sudafed\}, \{Aspirin $\rightarrow$ Vitamin C\}, \{Vitamin C $\rightarrow$ Aspirin\}. Why the results for last two rules are different?
 \item List all the frequent itemsets under the support count threshold $s_{min} = 3$.
-\item What does the anti-monotonicity property of a support imply? Give an example using the above data set. 
+\item What does the anti-monotonicity property of support imply? Give an example using the above data set. 
 \end{enumerate}
 \section*{Task 2}
-Write down all the steps of Apriori algorithm on the data set \ref{tab:toyexample} under the support count threshold $s_{min} > 3$. How many steps of Apriori algorithm you needed to perform? Draw a diagram showing all possible combinations of the items (e.g. lecture slide number 68). Mark all maximal, closed and infrequent items on this diagram.
-
+Apply Apriori algorithm on the drug data set example~\ref{tab:toyexample} with support count threshold $s_{min} > 3$. Show the candidate and frequent itemsets for each iteration. Enumerate all the final frequent itemsets. Also indicate the association rules that are generated and highlight the strongest ones.
 \section*{Task 3}
-Construct an FP-tree using the same data set \ref{tab:toyexample} (use support count  threshold $s_{min} > 3$) . Explain all the steps of the tree construction and draw a resulting tree. Based on this tree answer the questions: how many transactions contain \{Aspirin\} and \{Cepacol\}? How many transactions were made in total?
+Construct an FP-tree using the same data set \ref{tab:toyexample} (use the same support count  threshold $s_{min} > 3$) . Explain all the steps of the tree construction and draw a resulting tree. Based on this tree answer the questions: how many transactions contain \{Aspirin\} and \{Cepacol\}? How many transactions were made in total?
 
 
 \section*{Task 4}
-Simulate frequent pattern enumeration based on the FP-tree constructed in the previous exercise. Report all the frequent patterns. 
+Simulate frequent pattern enumeration based on the FP-tree constructed in the previous exercise. Report all the frequent patterns.
  
 \section*{Task 5}
 In this task we will get familiar with \href{http://www.r-project.org/}{the statistical computing language R}. Install it. We suggest you to download also the IDE that will make your life much easier: \href{https://www.rstudio.com/}{R studio}. Once you are set up, take a look at the introduction of R from the CRAN page (Manuals $\rightarrow$ An Introduction to R) or just google any basic tutorial. R is an open source and has a very powerful community with plenty of tutorials and websites. Once you feel more comfortable with it, go through the following tutorial, run it, check and report the results, describe and interpret them:
