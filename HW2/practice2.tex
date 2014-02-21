@@ -76,7 +76,7 @@
 \begin{enumerate}
 \item For the data from Table \ref{tab:toyexample} compute the support and support count for itemsets \{Aspirin\}, \{Tylenol, Cepacol\}, \{Aspirin, Ibuprofen, Panadol\} by treating each transaction ID as a market basket.
 \item Compute the confidence for the following association rules: \{Aspirin, Vitamin C\} $\rightarrow$ \{Sudafed\}, \{Aspirin\} $\rightarrow$ \{Vitamin C\}, \{Vitamin C\} $\rightarrow$ \{Aspirin\}. Why the results for last two rules are different?
-\item List all the frequent itemsets under the support count threshold $s_{min} = 3$.
+\item List all the frequent itemsets if the support count threshold $s_{min} = 3$.
 \item What does the anti-monotonicity property of support imply? Give an example using the above data set. 
 \end{enumerate}
 \section*{Task 2}
@@ -94,5 +94,5 @@ In this task we will get familiar with \href{http://www.r-project.org/}{the stat
 Note, when you paste the code from the pdf, some symbols may be copied incorrectly. We suggest you to type the above commands yourself, but in case you are too lazy, use the R script we uploaded for you on the page.  
 
 \section*{Task 6 (2pt)}
-Some rules do not provide extra knowledge as other rules already  contain the information. Such rules are called 'redundant'. Come up with the definition of the redundancy of the rules. Using the script and the data from task 5 tune default parameters so that there are redundant rules in the output. Next, add the "filter" that outputs only non-redundant rules. 
+Some rules do not provide extra knowledge as other rules already  contain the information. For example, if there is the rule \{Class='2nd', Age='Child'\}$\rightarrow$\\\{'Survived'='Yes'\}, then the rule \{Class='2nd', Age='Child',Sex='Female'\}$\rightarrow$\\\{'Survived'='Yes'\} is not so informative. Such rules are called 'redundant'. Come up with the definition of the redundancy of the rules. Using the script and the data from task 5 tune default parameters so that there are redundant rules in the output. Next, add the "filter" that outputs only non-redundant rules. 
 \end{document} 
