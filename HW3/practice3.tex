@@ -1,0 +1,75 @@
+\documentclass{article}
+
+\usepackage{courier}
+\usepackage{graphicx} % Required for the inclusion of images
+\usepackage{listings}
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{subcaption}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage[toc,page]{appendix}
+\usepackage{dcolumn}
+\usepackage{pdflscape}
+\usepackage{hyperref}
+\usepackage{framed}
+\usepackage[english]{babel}
+\usepackage{listing}
+
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+\renewcommand{\labelenumi}{\alph{enumi}.} % Make numbering in the enumerate environment by letter rather than number (e.g. section 6)
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=R,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true
+  tabsize=3
+}
+
+%\usepackage[colorlinks]{hyperref}
+\hypersetup{linkcolor=DarkRed}
+\hypersetup{urlcolor=DarkBlue}
+\usepackage{cleveref}
+
+\title{Data Mining\\Homework Assignment \#3} % Title
+
+\author{Dmytro \textsc{Fishman}, Anna \textsc{Leontjeva} and Jaak \textsc{Vilo}} % Author name
+
+%\date{23-09-2013} % Date for the report
+
+\begin{document}
+
+\maketitle % Insert the title, author and date
+
+\section*{Task 1}
+Watch the presentation \href{http://www.ted.com/talks/peter_donnelly_shows_how_stats_fool_juries.html}{``How juries are fooled by statistics''} by Peter Donnely. Find and extract all the mentioned in the presentation common mistakes humans make in interpreting statistics (HIV, cot death case etc.), also provide the correct interpretations.
+\section*{Task 2}
+Here comes something like, Download our favorite titanic data set again, form two contingency tables e.g. counting how many... Calculate confidence of the rules \{Male\} $\rightarrow$ \{Survived: Yes\} and \{Adult\} $\rightarrow$ \{Survived: No\}.
+\section*{Task 3}
+Now generate 1000 ``random'' 2x2 contingency tables for 1000 elements (distributed into f11, f10, f01, f00). Try to make randomness so that the cells are not too evenly distributed but are also likely to contain some more extreme values. Calculate the Piatetsky-Shapiro, Correlation and J-measure values. Identify best 2x2 tables according to your data.
+
+\section*{Task 4}
+Plot the above three measures values against each other (3 comparisons) and try to characterise verbally how and why the measures are different from each other.
+ 
+\section*{Task 5}
+Eliminate from the above 1000 tables those with support less than 1\%, 5\%, 10\%, 20\% , 50\% - how the comparisons of measures as done in task 5 changes?
+
+\section*{Task 6 (2pt)}
+Some rules do not provide extra knowledge as other rules already  contain the information. For example, if there is the rule \{Class='2nd', Age='Child'\}$\rightarrow$\\\{'Survived'='Yes'\}, then the rule \{Class='2nd', Age='Child',Sex='Female'\}$\rightarrow$\\\{'Survived'='Yes'\} is not so informative. Such rules are called 'redundant'. Come up with the definition of the redundancy of the rules. Using the script and the data from task 5 tune default parameters so that there are redundant rules in the output. Next, add the "filter" that outputs only non-redundant rules. 
+\end{document} 
