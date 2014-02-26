@@ -16,6 +16,7 @@
 \usepackage[english]{babel}
 \usepackage{listing}
 
+
 \setlength\parindent{0pt} % Removes all indentation from paragraphs
 
 \renewcommand{\labelenumi}{\alph{enumi}.} % Make numbering in the enumerate environment by letter rather than number (e.g. section 6)
@@ -40,6 +41,11 @@
   breakatwhitespace=true
   tabsize=3
 }
+
+%\usepackage[colorlinks]{hyperref}
+\hypersetup{linkcolor=DarkRed}
+\hypersetup{urlcolor=DarkBlue}
+\usepackage{cleveref}
 
 \title{Data Mining\\Homework Assignment \#2} % Title
 
@@ -74,15 +80,15 @@
 \end{table}
 \section*{Task 1}
 \begin{enumerate}
-\item For the data from Table \ref{tab:toyexample} compute the support and support count for itemsets \{Aspirin\}, \{Tylenol, Cepacol\}, \{Aspirin, Ibuprofen, Panadol\} by treating each transaction ID as a market basket.
+\item For the data from Table \ref{tab:toyexample} compute the support and support count for itemsets \{Aspirin\}, \{Tylenol, Cepacol\}, \{Aspirin, Ibuprofen, Panadol\}.
 \item Compute the confidence for the following association rules: \{Aspirin, Vitamin C\} $\rightarrow$ \{Sudafed\}, \{Aspirin\} $\rightarrow$ \{Vitamin C\}, \{Vitamin C\} $\rightarrow$ \{Aspirin\}. Why the results for last two rules are different?
 \item List all the frequent itemsets if the support count threshold $s_{min} = 3$.
 \item What does the anti-monotonicity property of support imply? Give an example using the above data set. 
 \end{enumerate}
 \section*{Task 2}
-Apply Apriori algorithm on the drug data set example~\ref{tab:toyexample} with support count threshold $s_{min} > 3$. Show the candidate and frequent itemsets for each iteration. Enumerate all the final frequent itemsets. Also indicate the association rules that are generated and highlight the strongest ones.
+Apply Apriori algorithm on the drug data set example~\ref{tab:toyexample} with support count threshold $s_{min} = 4$. Show the candidate and frequent itemsets for each iteration. Enumerate all the final frequent itemsets. Also indicate the association rules that could be generated from these itemsets and highlight the strongest ones.
 \section*{Task 3}
-Construct an FP-tree using the same data set \ref{tab:toyexample} (use the same support count  threshold $s_{min} > 3$) . Explain all the steps of the tree construction and draw a resulting tree. Based on this tree answer the questions: how many transactions contain \{Aspirin\} and \{Cepacol\}? How many transactions were made in total?
+Construct an FP-tree using the same data set \ref{tab:toyexample} (use the same support count  threshold $s_{min} = 4$) . Explain all the steps of the tree construction and draw a resulting tree. Based on this tree answer the questions: how many transactions contain \{Aspirin\} and \{Cepacol\}? How many transactions were made in total?
 
 
 \section*{Task 4}
@@ -91,7 +97,7 @@ Simulate frequent pattern enumeration based on the FP-tree constructed in the pr
 \section*{Task 5}
 In this task we will get familiar with \href{http://www.r-project.org/}{the statistical computing language R}. Install it. We suggest you to download also the IDE that will make your life much easier: \href{https://www.rstudio.com/}{R studio}. Once you are set up, take a look at the introduction of R from the CRAN page (Manuals $\rightarrow$ An Introduction to R) or just google any basic tutorial. R is an open source and has a very powerful community with plenty of tutorials and websites. Once you feel more comfortable with it, go through the following tutorial, run it, check and report the results, describe and interpret them:
 \lstinputlisting[language=R]{practice2.R}
-Note, when you paste the code from the pdf, some symbols may be copied incorrectly. We suggest you to type the above commands yourself, but in case you are too lazy, use the R script we uploaded for you on the page.  
+Note, when you paste the code from the pdf, some symbols may be copied incorrectly. We suggest you to type the above commands yourself, but in case you are too lazy, use the R script we uploaded for you on the page. P.S. If you have problems reading the data from the url, consider copying the data file from \href{https://courses.cs.ut.ee/MTAT.03.183/2014_spring/uploads/Main/titanic.txt}{link} to your computer and use command read.table(PATH, header = TRUE, sep = ','). 
 
 \section*{Task 6 (2pt)}
 Some rules do not provide extra knowledge as other rules already  contain the information. For example, if there is the rule \{Class='2nd', Age='Child'\}$\rightarrow$\\\{'Survived'='Yes'\}, then the rule \{Class='2nd', Age='Child',Sex='Female'\}$\rightarrow$\\\{'Survived'='Yes'\} is not so informative. Such rules are called 'redundant'. Come up with the definition of the redundancy of the rules. Using the script and the data from task 5 tune default parameters so that there are redundant rules in the output. Next, add the "filter" that outputs only non-redundant rules. 
