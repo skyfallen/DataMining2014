@@ -33,3 +33,12 @@ rules = apriori(titanic,parameter = list(minlen=2, supp=0.05, conf=0.8),appearan
 #visualization
 library(arulesViz)
 plot(rules, method="graph", control=list(type="items"))
+
+rules.sorted = sort(rules, by="lift")
+subset.matrix = is.subset(rules.sorted, rules.sorted)
+
+nonredundant = row.names(subset.matrix)[-c(2,3,5)]
+rules.pruned = rules.sorted[c(1,4,6)]
+
+
+
