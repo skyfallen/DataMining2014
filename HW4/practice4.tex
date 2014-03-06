@@ -57,71 +57,18 @@
 
 \maketitle % Insert the title, author and date
 
-In this homework (and further) you are free to use any programming language you like and feel comfortable with.
 \section*{Task 1}
-Watch the presentation \href{http://www.ted.com/talks/peter_donnelly_shows_how_stats_fool_juries.html}{``How juries are fooled by statistics''} by Peter Donnely. List all the mentioned in the presentation common cases of misinterpretation in statistics (HIV, cot death case etc.), also provide the correct interpretations.
+Choose your favorite visualization tool, play around with it and report few fancy pictures produced by this tool, e.g. \href{http://docs.ggplot2.org/current/}{ggplot2} (in R), Excel (hope you manage to find it yourself),\href{https://code.google.com/apis/ajax/playground/?type=visualization#motion_chart}{Google Code Playground}, \href{http://www.gnuplot.info/}{GNU plot}, \href{http://matplotlib.org/}{matplotlib} (for Python).
 \section*{Task 2}
-You are already familiar with the \href{https://courses.cs.ut.ee/MTAT.03.183/2014_spring/uploads/Main/titanic.txt}{titanic dataset}. Use it to form two contingency tables: Sex vs Survival and Age vs Survival. Hint for R-friends: use function \emph{table()}. Calculate from the tables the following (hint: don't be afraid to look through the lecture slides):
-\begin{itemize}
-\item support and interest (lift) for the association patterns \{Male, Survived: Yes\} and \{Adult, Survived: No\},
-\item confidence of the rules \{Male\} $\rightarrow$ \{Survived: Yes\} and \{Adult\} $\rightarrow$ \{Survived: No\}. 
-\item pick at least 2 (one - symmetric and one - non-symmetric) other interestingness measures from the lecture slides (e.g. table on p.102) and apply it on the mentioned association patterns/rules (or if you are bored, pick different ones).
-\item interpret the results. What is the difference between the measures?  
-\end{itemize} 
+ Read in the data file: \href{http://www0.cs.ucl.ac.uk/staff/m.herbster/GI07/week4/iris.data.txt}{IrisData.txt}. For each variable, calculate mean, standard deviation, median, minimum and maximum. Describe what type of data you have (continuous or discrete etc.). There are some obvious outliers in the data. Find a way how to detect and remove rows which contain them (hint: if you use R, function ``boxplot'' could be useful). Explain why some of these statistics have changed and some of them not much. In the next exercises, use the data where outliers are removed.
 
 \section*{Task 3}
-Generate 1000 2x2 contingency tables with 1000 elements in each (distributed over f11, f10, f01, f00) so that the cells are skewed (contain more extreme values than uniform distribution). Calculate the Piatetsky-Shapiro, $\phi$ correlation and J-measure values. Compare measures and choose 2x2 tables with highest scores.
-
 
 \section*{Task 4}
-Plot the above three measures values against each other (3 comparisons) and try to characterize how and why the measures are different from each other.
  
 \section*{Task 5}
-Eliminate from the above 1000 tables those with support less than 1\%, 10\%, 50\% - how the comparisons of measures in task 4 changes?
+Implement a density estimation function using a triangular kernel. Use that to plot the density. Compare to histogram and a smooth kernel using the same IrisData.txt as in the second task. 
 
 \section*{Task 6 (2pt)}
-Examine the applicability of association rule mining in the following domains (\cite{Kumar2000}):
-\begin{itemize}
-\item Text documents (e.g. news articles from an online newspaper archive). Each document 
-consists of a collection of words that appear in the document.
-\item Stock market data (from NASDAQ or Dow Jones Index – e.g. \url{http://www.bloomberg.com/markets/} or \url{http://finance.yahoo.com/}). The raw data contains the closing price of each stock for the last 5 years. We are only interested in the fluctuations of stock prices (i.e. whether the stock price goes up or down compared to the previous closing price).
-\item Census data (such as the US Census data which is available at 
-\url{http://archive.ics.uci.edu/ml/datasets/Census+Income}). The data contains, for each person, 
-information such as age, level of education, relationship, working hours per week, capital gain etc. 
-\end{itemize} 
-\begin{table}[h!]
-\begin{center}
-\begin{tabular}{l*{6}r}
-\hline
-Transaction& Item1& Item2& Item3& Item4& \dots\\
-\hline
-Basket1& 0& 1& 1& 0& \dots \\
-Basket2& 1& 0& 1& 0& \dots \\
-\dots&\dots& \dots&\dots& \dots& \dots\\ 
-\end{tabular}
-\end{center}
-\caption{Example of the transaction matrix}
-\label{tab:trans_matrix}
-\end{table}
- 
-In each of the application domain, answer the following questions:
-\begin{itemize} 
-\item Give an example of a hypothetical association rule that can be generated from the domain. 
-\item Describe how you would construct the transaction matrix (table \ref{tab:trans_matrix}) in order to derive the 
-example pattern given above. Specifically, what are the baskets and items?  
-\item What are the limitations of your proposed transaction matrix? Specifically, will there be any 
-interesting rules missed out by your choice of transaction matrix?
-\end{itemize}
-
-\begin{thebibliography}{9}
-
-\bibitem{Kumar2000}
-  Vipin Kumar,
-  \emph{CSci 8980:Data Mining}.
-  Homework assignment,
-  http://www-users.cs.umn.edu/~han/dmclass/hw7.pdf,
-  2000.
-
-\end{thebibliography}
 
 \end{document} 
