@@ -59,7 +59,6 @@
 
 You are free to use any programming language you are comfortable with. Hints in R are optional. Check appendix for more hints at the end of the document.
 
-
 \section*{Task 1}
 Use the data file: \href{http://www0.cs.ucl.ac.uk/staff/m.herbster/GI07/week4/iris.data.txt}{iris.data.txt}. Take a look at the \href{http://archive.ics.uci.edu/ml/datasets/Iris}{description of the dataset}. 
 \begin{itemize}
@@ -70,6 +69,7 @@ Use the data file: \href{http://www0.cs.ucl.ac.uk/staff/m.herbster/GI07/week4/ir
 Check, whether there are some outliers in the data (from the previous task). In spite of the outlier detection being a subjective exercise, we will use two very basic ways to detect them. 
 \\
 The first one uses the notion of the interquartile range (IQR). It is defined as the difference between upper quartile(UQ, $75\%$) and lower quartile(LQ, $25\%$).\\ 
+
 \texttt{Hint}: in R these are 3rd Qu. and 1st Qu. in the output of the command \texttt{summary}(\emph{mydata}) or use function \texttt{quantile}(\emph{myfeature}).\\ 
 
 The outliers are considered those that are outside the range:
@@ -92,6 +92,7 @@ Use the original \href{http://www0.cs.ucl.ac.uk/staff/m.herbster/GI07/week4/iris
 Often, datasets you work with have missing values. It is important to understand whether the values are missing completely at random or missing data are systematic in some way. In this task you are provided with two files called \emph{iris\_missing\_1.txt} and \emph{iris\_missing\_2.txt}. Investigate, which case of missing data you are dealing with in both cases. Accordingly to your discoveries, make an imputation of missing values. Describe, how you do it and compare with the initial dataset. How do your descriptive statistics differ? Measure the mean squared error (MSE) you made with your imputations for each variable ($MSE = 1/n \sum_{i=1}{n}(imputed\_value_{i} - real\_value_{i})^2$).
 
 \section*{Task 5}
+
 Implement a density estimation function using a triangular kernel. Use that to plot the density. Compare to histogram using the same iris data. 
 
 \section*{Task 6 (2pt)}
@@ -99,6 +100,7 @@ In the Task 3 we experimented with two types of the binning. There is another on
 \section*{Additional help}
 \begin{itemize}
 \item Choose your favorite visualization tool and play around with it. This should make your life easier when dealing with ``draw something...'' problems, e.g. \href{http://docs.ggplot2.org/current/}{ggplot2} (in R),\href{https://code.google.com/apis/ajax/playground/?type=visualization#motion_chart}{Google Code Playground}, \href{http://www.gnuplot.info/}{GNU plot}, \href{http://matplotlib.org/}{matplotlib} (for Python), etc.
+
 \item Note, that you may have problems with copy-paste from the pdf to the editor, I recommend you to type the commands yourself. 
 \item The iris dataset has no header in the source file. Don't forget to load it properly: \texttt{iris = read.table(\emph{"path"}, header = FALSE, sep =',')}
 \item However, it is more convenient to refer to a particular variable by name, thus, assign names to your data:\\
