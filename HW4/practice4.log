@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.9.25)  6 MAR 2014 21:04
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.9.25)  7 MAR 2014 12:34
 entering extended mode
 **C:/Tartu*Ulikool/Data*Mining/DataMining2014/HW4/practice4.tex
 ("C:/Tartu Ulikool/Data Mining/DataMining2014/HW4/practice4.tex"
@@ -448,34 +448,93 @@ LaTeX Info: Redefining \nameref on input line 56.
 ("C:\Tartu Ulikool\Data Mining\DataMining2014\HW4\practice4.out")
 ("C:\Tartu Ulikool\Data Mining\DataMining2014\HW4\practice4.out")
 \@outlinefile=\write3
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 74.
- [1
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 66.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 66.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 73.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1pcr.fd"
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
+Underfull \hbox (badness 10000) in paragraph at lines 70--74
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--80
+
+ []
+
+[1
 
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 74.
+Overfull \hbox (28.1116pt too wide) in paragraph at lines 89--90
+\OT1/cmr/m/n/10 spect to the sub-class of the flower (e.g. \OT1/pcr/m/n/10 tabl
+e\OT1/cmr/m/n/10 (\OT1/cmr/m/it/10 iris\OT1/cmr/m/sl/10 $\OT1/cmr/m/it/10 class
+\OT1/cmr/m/n/10 ,\OT1/cmr/m/it/10 iris\OT1/cmr/m/sl/10 $\OT1/cmr/m/it/10 discre
+tized[]sepal[]length\OT1/cmr/m/n/10 )).
+ []
 
-("C:\Tartu Ulikool\Data Mining\DataMining2014\HW4\practice4.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 74.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 74.
+[2]
+LaTeX Font Info:    Font shape `OT1/pcr/m/it' in size <10> not available
+(Font)              Font shape `OT1/pcr/m/sl' tried instead on input line 103.
+
+Overfull \hbox (29.38902pt too wide) in paragraph at lines 103--104
+\OT1/cmr/m/n/10 prop-erly: \OT1/pcr/m/n/10 iris = read.table(\OT1/pcr/m/sl/10 "
+path"\OT1/pcr/m/n/10 , header = FALSE, sep =',') 
+ []
+
+
+Overfull \hbox (5.51715pt too wide) in paragraph at lines 107--108
+\OT1/cmr/m/n/10 tively, you can ask for a par-tic-u-lar col-umn by name: \OT1/p
+cr/m/n/10 iris$sepal[]length\OT1/cmr/m/n/10 . 
+ []
+
+[3]
+Overfull \hbox (26.45692pt too wide) in paragraph at lines 118--119
+[]\OT1/cmr/m/n/10 the most im-por-tant func-tion for the miss-ing val-ues is \O
+T1/pcr/m/n/10 is.na\OT1/cmr/m/n/10 (\OT1/cmr/m/it/10 mydata\OT1/cmr/m/sl/10 $\O
+T1/cmr/m/it/10 myfeature\OT1/cmr/m/n/10 ).
+ []
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 129.
+[4]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 129.
+ ("C:\Tartu Ulikool\Data Mining\DataMining2014\HW4\practice4.aux")
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 129.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 129.
 Package rerunfilecheck Info: File `practice4.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 74.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 129.
  ) 
 Here is how much of TeX's memory you used:
- 10144 strings out of 493921
- 162742 string characters out of 3147270
- 284296 words of memory out of 3000000
- 13321 multiletter control sequences out of 15000+200000
- 7954 words of font info for 29 fonts, out of 3000000 for 9000
+ 10934 strings out of 493921
+ 171326 string characters out of 3147270
+ 290296 words of memory out of 3000000
+ 14084 multiletter control sequences out of 15000+200000
+ 11053 words of font info for 40 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 42i,6n,41p,652b,333s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Pr
-ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Fil
-es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX
- 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on practice4.pdf (1 page, 58886 bytes).
+ 42i,6n,41p,779b,1762s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program File
+s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
+/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/a
+msfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/c
+m/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.p
+fb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Pro
+gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Program Fil
+es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fo
+nts/type1/urw/courier/ucrr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/c
+ourier/ucrro8a.pfb>
+Output written on practice4.pdf (4 pages, 163107 bytes).
 PDF statistics:
- 40 PDF objects out of 1000 (max. 8388607)
- 8 named destinations out of 1000 (max. 500000)
+ 105 PDF objects out of 1000 (max. 8388607)
+ 21 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

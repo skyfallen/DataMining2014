@@ -47,7 +47,7 @@
 \hypersetup{urlcolor=DarkBlue}
 \usepackage{cleveref}
 
-\title{Data Mining\\Homework Assignment \#3} % Title
+\title{Data Mining\\Homework Assignment \#4} % Title
 
 \author{Dmytro Fishman, Anna Leontjeva and Jaak Vilo} % Author name
 
@@ -57,18 +57,73 @@
 
 \maketitle % Insert the title, author and date
 
+You are free to use any programming language you are comfortable with. Hints in R are optional. Check appendix for more hints at the end of the document.
+
+
 \section*{Task 1}
-Choose your favorite visualization tool, play around with it and report few fancy pictures produced by this tool, e.g. \href{http://docs.ggplot2.org/current/}{ggplot2} (in R), Excel (hope you manage to find it yourself),\href{https://code.google.com/apis/ajax/playground/?type=visualization#motion_chart}{Google Code Playground}, \href{http://www.gnuplot.info/}{GNU plot}, \href{http://matplotlib.org/}{matplotlib} (for Python).
+Use the data file: \href{http://www0.cs.ucl.ac.uk/staff/m.herbster/GI07/week4/iris.data.txt}{iris.data.txt}. Take a look at the \href{http://archive.ics.uci.edu/ml/datasets/Iris}{description of the dataset}. 
+\begin{itemize}
+\item For each variable calculate mean, standard deviation, median, minimum, maximum and mode. Describe what type of data you have (e.g. continuous or discrete). Are the distributions of variables symmetric, positively or negatively skewed?
+\item Plot 4 boxplots: for each continuous variable with respect to the class (x-axis is the subclass of the flower: Iris-setosa, Iris-versicolor, Iris-virginica and y-axis is a continuous variable). What do these figures mean and how to interpret them? 
+\end{itemize}
 \section*{Task 2}
- Read in the data file: \href{http://www0.cs.ucl.ac.uk/staff/m.herbster/GI07/week4/iris.data.txt}{IrisData.txt}. For each variable, calculate mean, standard deviation, median, minimum and maximum. Describe what type of data you have (continuous or discrete etc.). There are some obvious outliers in the data. Find a way how to detect and remove rows which contain them (hint: if you use R, function ``boxplot'' could be useful). Explain why some of these statistics have changed and some of them not much. In the next exercises, use the data where outliers are removed.
+Check, whether there are some outliers in the data (from the previous task). In spite of the outlier detection being a subjective exercise, we will use two very basic ways to detect them. 
+\\
+The first one uses the notion of the interquartile range (IQR). It is defined as the difference between upper quartile(UQ, $75\%$) and lower quartile(LQ, $25\%$).\\ 
+\texttt{Hint}: in R these are 3rd Qu. and 1st Qu. in the output of the command \texttt{summary}(\emph{mydata}) or use function \texttt{quantile}(\emph{myfeature}).\\ 
+
+The outliers are considered those that are outside the range:
+$$[LQ - k\times IQR, UQ + k \times IQR],$$
+where $k$ is some non-negative constant. In our case let $k = 1.5$.\\
+\\
+The second method uses the notion of mean and standard deviation:
+$$\frac{|x-mean(x)|}{sd.dev(x)} > 3$$\\
+In this task:
+\begin{itemize}
+\item Use above two methods to detect outliers. Do they agree?
+\item Calculate  mean, standard deviation, median, minimum, maximum and mode for each variable (without outliers that were detected) and compare them with the ones obtained in the Task 1. Interpret the difference that you observe.
+\item Compare outliers on previously plotted boxplots with the outliers detected by you. Do they agree?
+\end{itemize}
 
 \section*{Task 3}
+Use the original \href{http://www0.cs.ucl.ac.uk/staff/m.herbster/GI07/week4/iris.data.txt}{iris dataset} (as in the Task 1) to discretize continuous variables. For each of the variables apply equal-width and equal-depth binning. Firstly, partition the data into two intervals and look at the contingency tables with respect to the subclass of the flower (e.g.  \texttt{table}(\emph{iris\$class},\emph{iris\$discretized\_sepal\_length})). Play with a different number of intervals (at least with 3 and 4). What do you observe?
 
 \section*{Task 4}
- 
+Often, datasets you work with have missing values. It is important to understand whether the values are missing completely at random or missing data are systematic in some way. In this task you are provided with two files called \emph{iris\_missing\_1.txt} and \emph{iris\_missing\_2.txt}. Investigate, which case of missing data you are dealing with in both cases. Accordingly to your discoveries, make an imputation of missing values. Describe, how you do it and compare with the initial dataset. How do your descriptive statistics differ? Measure the mean squared error (MSE) you made with your imputations for each variable ($MSE = 1/n \sum_{i=1}{n}(imputed\_value_{i} - real\_value_{i})^2$).
+
 \section*{Task 5}
-Implement a density estimation function using a triangular kernel. Use that to plot the density. Compare to histogram and a smooth kernel using the same IrisData.txt as in the second task. 
+Implement a density estimation function using a triangular kernel. Use that to plot the density. Compare to histogram using the same iris data. 
 
 \section*{Task 6 (2pt)}
-
-\end{document} 
+In the Task 3 we experimented with two types of the binning. There is another one, which is based on the notion of entropy. Use  \href{http://www.saedsayad.com/supervised_binning.htm}{the following link} as the reference and implement the method of entropy-based binning. Apply on the same dataset. How the results differ from the results in the task 2?
+\section*{Additional help}
+\begin{itemize}
+\item Choose your favorite visualization tool and play around with it. This should make your life easier when dealing with ``draw something...'' problems, e.g. \href{http://docs.ggplot2.org/current/}{ggplot2} (in R),\href{https://code.google.com/apis/ajax/playground/?type=visualization#motion_chart}{Google Code Playground}, \href{http://www.gnuplot.info/}{GNU plot}, \href{http://matplotlib.org/}{matplotlib} (for Python), etc.
+\item Note, that you may have problems with copy-paste from the pdf to the editor, I recommend you to type the commands yourself. 
+\item The iris dataset has no header in the source file. Don't forget to load it properly: \texttt{iris = read.table(\emph{"path"}, header = FALSE, sep =',')}
+\item However, it is more convenient to refer to a particular variable by name, thus, assign names to your data:\\
+\texttt{names(iris) = c("sepal\_length","sepal\_width",\\"petal\_length","petal\_width","class")} 
+\item Check, what type of data you are dealing with by typing \texttt{class(iris)}. It should be data.frame.
+\item In R you can request the columns or rows. For example, \texttt{iris[,1]} will print the first column, while \texttt{iris[1,]} gives you the first row. Alternatively, you can ask for a particular column by name: \texttt{iris\$sepal\_length}.
+\item Calculation of descriptive statistics is very easy -- \texttt{summary(iris)} will do all the dirty work for you. You can ask it separately as well, using \texttt{mean}(\emph{mydata\$myvariable}) or \texttt{sd}(\emph{mydata\$myvariable}). Surprisingly, the mode is an exception. Function mode will print you something like the storage mode of an object. It is not what you need.
+\item If you are also eager to learn  visualization in R using library \texttt{ggplot2}, take a look at \href{http://docs.ggplot2.org/current/}{the documentation}. Use of packages in R is easy. You need to install package only once (\texttt{install.packages("ggplot2")}) and load every time you want to use it: \texttt{library(ggplot2)}. Now a simple example of boxplot would be:
+\begin{lstlisting}
+ggplot(iris, aes(x=sepal_length, fill=class))+geom_histogram()
+\end{lstlisting}
+\item for the binning task I recommend you to dive into the help of the function \texttt{cut}. Gentle reminder: ?cut 
+\item If you want to create a new feature, let's say the sum of two existing ones, type: 
+\begin{lstlisting}
+iris$meaningless_sum = iris$sepal_length + iris$sepal_width
+\end{lstlisting}
+\item the most important function for the missing values is   \texttt{is.na}(\emph{mydata\$myfeature}). It will produce a logical variable, which will be TRUE for indices with missing data:
+\begin{lstlisting}
+is.na(iris_missing$sepal_width)
+  [1] FALSE FALSE FALSE TRUE FALSE FALSE FALSE FALSE FALSE ...
+\end{lstlisting}
+and the following command will give you the subset of the data with missing values in the variable sepal width:
+\begin{lstlisting}
+subset(iris_missing, is.na(iris_missing$sepal_width)==TRUE)
+\end{lstlisting}
+\item Don't forget to go through the slides. For example, some version of kernel function is already there for you. 
+\end{itemize}
+\end{document}
