@@ -51,7 +51,7 @@
 
 \author{Dmytro Fishman, Anna Leontjeva and Jaak Vilo} % Author name
 
-%\date{23-09-2013} % Date for the report
+\date{07-03-2014} % Date for the report
 
 \begin{document}
 
@@ -77,7 +77,7 @@ $$[LQ - k\times IQR, UQ + k \times IQR],$$
 where $k$ is some non-negative constant. In our case let $k = 1.5$.\\
 \\
 The second method uses the notion of mean and standard deviation:
-$$\frac{|x-mean(x)|}{sd.dev(x)} > 3$$\\
+$$\frac{|x_i-mean(x)|}{sd.dev(x)} > 3$$\\
 In this task:
 \begin{itemize}
 \item Use above two methods to detect outliers. Do they agree?
@@ -96,7 +96,7 @@ Often, datasets you work with have missing values. It is important to understand
 Implement a density estimation function using a triangular kernel. Use that to plot the density. Compare to histogram using the same iris data. 
 
 \section*{Task 6 (2pt)}
-In the Task 3 we experimented with two types of the binning. There is another one, which is based on the notion of entropy. Use  \href{http://www.saedsayad.com/supervised_binning.htm}{the following link} as the reference and implement the method of entropy-based binning. Apply on the same dataset. How the results differ from the results in the task 2?
+In the Task 3 we experimented with two types of the binning. There is another one, which is based on the notion of entropy. Use  \href{http://www.saedsayad.com/supervised_binning.htm}{the following link} as the reference and implement the method of entropy-based binning. Apply on the same dataset. How the results differ from the results in the task 3?
 \section*{Additional help}
 \begin{itemize}
 \item Choose your favorite visualization tool and play around with it. This should make your life easier when dealing with ``draw something...'' problems, e.g. \href{http://docs.ggplot2.org/current/}{ggplot2} (in R),\href{https://code.google.com/apis/ajax/playground/?type=visualization#motion_chart}{Google Code Playground}, \href{http://www.gnuplot.info/}{GNU plot}, \href{http://matplotlib.org/}{matplotlib} (for Python), etc.
@@ -108,7 +108,7 @@ In the Task 3 we experimented with two types of the binning. There is another on
 \item Check, what type of data you are dealing with by typing \texttt{class(iris)}. It should be data.frame.
 \item In R you can request the columns or rows. For example, \texttt{iris[,1]} will print the first column, while \texttt{iris[1,]} gives you the first row. Alternatively, you can ask for a particular column by name: \texttt{iris\$sepal\_length}.
 \item Calculation of descriptive statistics is very easy -- \texttt{summary(iris)} will do all the dirty work for you. You can ask it separately as well, using \texttt{mean}(\emph{mydata\$myvariable}) or \texttt{sd}(\emph{mydata\$myvariable}). Surprisingly, the mode is an exception. Function mode will print you something like the storage mode of an object. It is not what you need.
-\item If you are also eager to learn  visualization in R using library \texttt{ggplot2}, take a look at \href{http://docs.ggplot2.org/current/}{the documentation}. Use of packages in R is easy. You need to install package only once (\texttt{install.packages("ggplot2")}) and load every time you want to use it: \texttt{library(ggplot2)}. Now a simple example of boxplot would be:
+\item If you are also eager to learn  visualization in R using library \texttt{ggplot2}, take a look at \href{http://docs.ggplot2.org/current/}{the documentation}. Use of packages in R is easy. You need to install package only once (\texttt{install.packages("ggplot2")}) and load every time you want to use it: \texttt{library(ggplot2)}. Now a simple example of histogram would be:
 \begin{lstlisting}
 ggplot(iris, aes(x=sepal_length, fill=class))+geom_histogram()
 \end{lstlisting}
