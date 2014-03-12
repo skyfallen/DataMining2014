@@ -1,0 +1,90 @@
+\documentclass{article}
+
+\usepackage{courier}
+\usepackage{graphicx} % Required for the inclusion of images
+\usepackage{listings}
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{subcaption}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage[toc,page]{appendix}
+\usepackage{dcolumn}
+\usepackage{pdflscape}
+\usepackage{hyperref}
+\usepackage{framed}
+\usepackage[english]{babel}
+\usepackage{listing}
+
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+\renewcommand{\labelenumi}{\alph{enumi}.} % Make numbering in the enumerate environment by letter rather than number (e.g. section 6)
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=R,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true
+  tabsize=3
+}
+
+%\usepackage[colorlinks]{hyperref}
+\hypersetup{linkcolor=DarkRed}
+\hypersetup{urlcolor=DarkBlue}
+\usepackage{cleveref}
+
+\title{Data Mining\\Homework Assignment \#4} % Title
+
+\author{Dmytro Fishman, Anna Leontjeva and Jaak Vilo} % Author name
+
+%\date{23-09-2013} % Date for the report
+
+\begin{document}
+
+\maketitle % Insert the title, author and date
+
+You are free to use any programming language you are comfortable with. Hints in R are optional. Check appendix for more hints at the end of the document.
+
+\section*{Task 1}
+Listen to the presentation by Tamara Munzner: Keynote on Visualization Principles - http://vizbi.org/Videos/26205288 (use the PDF slide-deck from there as well http://bit.ly/nCJM5U )
+\section*{Task 2}
+Summarise the key take-home messages from her presentation on one nice page.
+
+\section*{Task 3}
+Read data from file, data.txt, calculate mean, median, variance and standard deviation for the each feature (column). Compare them. Do you see the difference? Plot each feature separately and observe the trick :)
+
+\section*{Task 4}
+Perform a "Single Link" clustering of 2-D data from slide 28. Use Euclidean distance as a distance measure. Draw a dendrogram/tree with node height at the distance at where the clusters were merged. Hint: Draw the points first on 2D and then perform manual simulation. (Solutions on paper are ok :-)
+\begin{lstlisting}
+	X	Y
+A	2	4
+B	7	3
+C	3	5
+D	5	3
+E	7	4
+F	6	8
+G	6	5
+H	8	4
+I	2	5
+J	3	7
+\end{lstlisting}
+
+\section*{Task 5}
+Perform the same clustering on the following data set (link to the USArrests).
+\section*{Task 6 (2pt)}
+
+\end{document}
