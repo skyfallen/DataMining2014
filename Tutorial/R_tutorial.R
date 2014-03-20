@@ -1,6 +1,7 @@
 #-------------------R as calculator----------------#
 2 + 2
 2/1.3
+3.4/2
 x = 3
 x + 2
 x = 3
@@ -19,6 +20,9 @@ apropos("log") #search for functions with this word
 help.search("log")
 example(log)
 
+
+
+
 ##########################################################
 #Exercise 1
 #Calculate an area of a circle (pi*r^2) with radius r = 5 
@@ -26,15 +30,21 @@ example(log)
 #Answer:
 r = 5
 area = pi*r^2
-area
+round(area,0)
+floor(area)
+ceiling(area)
+
 ##########################################################
 
 #-------------------------Vectors------------------#
 x = c(1,3,4,7) #assigning names. this vector will be stored in your directory
 x
 c(48,56,79) #this will not
-y = c(4,5,6,1)
+
 z = rep(1,4)
+z
+rep(0,10)
+
 1:4
 4:1
 -1:3
@@ -42,28 +52,52 @@ year = 2003:2007
 year
 seq(1,4)
 seq(2, 8, by=2)
-seq(0, 1, by=.1)
+v = seq(0, 1, by=.1)
+class(v)
+
 seq(0, 1, length=5)
 fruits = c("apples","oranges","bananas","mangos")
+
+as.numeric(c("1","2","3"))
+m = c("1","2","3", 4)
+m = c(1,2,3,4,"5")
+
 fruits[1] #first element of a vector
+
 length(fruits) #vector length
+
 fruits[length(fruits)]#last element of a vector
+
 fruits[c(1,2)]
+fruits[1:3]
+
 fruits[-3]
-c(x,y) #concatinate
-x[x>=4]
+c(x,z) #concatinate
+
+sin(x[x>=4]+2)^2 + c(3,4)
+c(3,4)/2
+c(3,4)/c(8,9)
 
 x+3
-rev(x) #reverse
+rev(y) #reverse
+y = c(10,6,8,2,10)
 sort(y)
 order(y)
+
+y[order(y, decreasing=TRUE)]
+
 c(1,2,3,4)/2    
 c(1,2,3,4)/c(4,3,2,1)
 log(c(0.1,1,10,100), 10)
 
+
+
 #when R tries to be smart ...
 c(1,2,3,4) + c(4,3)
+
 c(1,2,3,4) + c(4,3,2)
+
+
 ###########################################################
 #Exercise 2
 #Add to the fruit vector another vector with pear, repeated 6 times
@@ -77,10 +111,30 @@ c(fruits,pears)
 mx = matrix(fruits,2,2)
 matrix(c(1,2,4,3,2,5,6,7,5,11,2,3),3,4)
 mx2 = matrix(c(1,2,4,3,2,5,6,7,5,11,2,3),3,4, byrow=TRUE)
+matrix(rep(10,10), ncol = 5)
+
 mx2[,c(1,2)]
 mx2[c(1,2),]
-cbind(mx2,c(0,0,0))
-rbind(mx2,c(0,0,0))
+
+mx2[1,]*2
+mx2[,2]
+
+
+mx2[1,3]
+
+mx2*7
+mx2[,3]/2
+mx2[1,] = mx2[1,]/2
+
+
+mx3 = cbind(mx2,rep(0,3))
+
+mx2[,2] = rep(3,3)
+mx2[,3] = 3
+cbind(mx2[,1:2],rep(3,3), mx2[,3:4])
+
+rbind(mx2,c(0,0,0)) #why warning
+
 rbind(mx2,c(0,0,0,0))
 ###########################################################
 #Exercise 3
@@ -88,6 +142,7 @@ rbind(mx2,c(0,0,0,0))
 
 #Answer:
 z = matrix(c(rep(1,5),rep(2,5),rep(3,5)),ncol = 5, byrow = TRUE)
+
 ###########################################################
 
 #-------------------------Lists------------------#
@@ -96,7 +151,7 @@ person
 person$name
 person$x
 
-complicated_list = list("a"=1:4, "b"=1:3, "c"=matrix(1:4, nrow=2), "d"=search)
+complicated_list = list("a"= 1:4, "b"=1:3, "c"=matrix(1:4, nrow=2), "d"=search)
 
 complicated_list[[1]]
 complicated_list[[1]][1]
@@ -111,6 +166,7 @@ complicated_list
 #now let's deal with data frames
 #empty one
 empty_df = data.frame()
+
 df = data.frame(names = c("Tom","Jerry","Spike"), year=c(1994,1998,2000), x=rep(1,3), y=c(3,5,6))
 df$sum = df$x + df$y
 df[,1]
@@ -130,7 +186,7 @@ new_df$z = new_df$x + 10
 ###########################################################
 
 #data generation
-x = runif(100)
+x = round(runif(100, min = 1, max = 5),0)
 y = rnorm(100)
 z = sample(x, size = 5, replace =TRUE) #replace = FALSE
 
@@ -138,6 +194,7 @@ x = 1:12
 # a random permutation
 sample(x)
 sample(x, replace = TRUE)
+hist(sample(1:10,10000, replace = TRUE))
 
 # 100 Bernoulli trials
 sample(c(0,1), 100, replace = TRUE)
@@ -160,11 +217,12 @@ ls()
 rm(complicated_list)
 ls()
 getwd()
-setwd("C:\\Documents and Settings\\")
+setwd("C:\\Users\\v-anleon\\Desktop\\Tartu_University\\DataMining2014\\Practices")
 library()   # see all packages installed 
 search()    # see packages currently loaded
-#install.packages("ggplot2")
-#library(ggplot2)
+install.packages("ggplot2")
+
+library(ggplot2)
 
 #Reading data
 iris = read.table("C:\\Users\\v-anleon\\Desktop\\Tartu_University\\DataMining2014\\Practices\\iris.data.txt", header=FALSE, sep=',')
@@ -174,6 +232,7 @@ class(iris)
 str(iris)
 dim(iris)
 nrow(iris)
+rnorm(max = )
 
 #scan produces vector, read.csv has some additional options
 #to read an R code from external file:
@@ -192,12 +251,13 @@ set.seed(374)
 prices1 =  runif(15)
 prices2 = prices1 + 0.03*rnorm(15)
 prices = cbind.data.frame(prices1, prices2)
-
+prices
 # Delete 5 points from each at random.
 prices1[sample(1:15, 5)] = NA
 prices2[sample(1:15, 5)] = NA
 prices = cbind.data.frame(prices1, prices2)
 
+prices
 prices[!complete.cases(prices),]
 prices[complete.cases(prices),]
 
@@ -212,20 +272,22 @@ prices_new = cbind.data.frame(prices, combined)
 
 prices_new = na.omit(prices_new)
 
-set.seed(34)
-users = sample(1:15, replace=TRUE)
-tmp = data.frame(users)
-tmp$sex = sample(c("Male","Female"),15, replace = TRUE)
 
-subset(tmp, sex == 'Female')
 
 head(iris)
 subset(iris, Sepal.Width >= 4)
 subset(iris, Sepal.Width >= 4 & Petal.Length>1.4)
 subset(iris, Sepal.Width >= 4 | (Species == 'Iris-versicolor' & Sepal.Width < 3))
 
-iris$bla_bla = ifelse(iris$Sepal.Length>1.4, 1,0)
+iris$bla_bla = ifelse(iris$Sepal.Length<5, 1,0)
 table(iris$bla_bla)
+
+set.seed(34)
+users = sample(1:15, replace=TRUE)
+tmp = data.frame(users)
+tmp$sex = sample(c("Male","Female"),15, replace = TRUE)
+
+subset(tmp, sex == 'Female')
 ###########################################################
 #Exercise 7
 #explain how this dataset was created. what functions  duplicated and unique are for? 
@@ -250,7 +312,7 @@ aggregate(data = iris, Sepal.Length ~ Sepal.Length.bins, mean)
 #--------------------#
 #how to generate train and test data
 nrow(iris)
-#we want to divide data 60/40 split randomly
+#we want to divide data 50/50 split randomly
 
 idx_train = sample(nrow(iris), round(nrow(iris)*0.5),0)
 length(idx_train)
@@ -271,7 +333,58 @@ apply(iris[,c(1:4)], 2, sd)
 ddply(iris, .(Species, Sepal.Length.bins), summarize, mean = round(mean(Petal.Width), 2), sd = round(sd(Petal.Width), 2))
 
 
-#plotting, basic: hist, boxplot, ggplot (?), heatmap, show how to use documentation
+###########################################################
+#Exercise 8
+#Simplify the following code: make it without for loop. 
+
+tmp$bought <- rep(0, nrow(tmp))
+for (i in 1:length(tmp$bought)) {
+  if (tmp$sex[i] == "Female") tmp$bought[i] = 1
+}
+tmp$bought <- factor(tmp$bought)
+
+#Answer
+tmp$bought = ifelse(tmp$sex == 'Female', 1, 0)
+##########################################################
+
+#plotting, basic: 
+#scatterplot
+plot(iris$Sepal.Length, iris$Sepal.Width)
+plot(iris$Sepal.Length, iris$Sepal.Width, type = 'b')
+plot(iris$Sepal.Length, iris$Sepal.Width, type = 'l')
+plot(iris$Sepal.Length, iris$Sepal.Width, col = 'red')
+plot(iris$Sepal.Length, iris$Sepal.Width, xlab = "Sepal length", ylab = 'Sepal Width', main = 'Scatterplot', xlim = c(5.5, 8))
+
+hist(iris$Petal.Length)
+
+par(mfrow = c(2,2))
+plot(iris$Sepal.Length, iris$Sepal.Width)
+hist(iris$Petal.Length)
+boxplot(iris$Species, iris$Petal.Length)
+hist(iris$Petal.Width, freq = FALSE)
+lines(density(iris$Petal.Width), col ='red')
+par(mfrow=c(1,1))
+
+
+heatmap(as.matrix(iris[,c(1:4)]))
+
+library(ggplot2)
+ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width))+ geom_point()
+ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width,color = Species))+ geom_point()
+ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width,color = Species, size = Petal.Width))+ geom_point()
+
 
 #writing your own function
+f = function(x)
+{
+  x^3 + x^2 + x + 10
+}
 
+f(5)
+
+newf <- function(a,b)
+{
+  x = runif(10,a,b)
+  mean(x)
+}
+newf(5,6)
