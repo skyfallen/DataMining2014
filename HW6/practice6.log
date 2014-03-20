@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.9.25)  20 MAR 2014 19:34
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.9.25)  20 MAR 2014 21:46
 entering extended mode
 **C:/Tartu*Ulikool/Data*Mining/DataMining2014/HW6/practice6.tex
 ("C:/Tartu Ulikool/Data Mining/DataMining2014/HW6/practice6.tex"
@@ -448,7 +448,7 @@ LaTeX Info: Redefining \nameref on input line 56.
 ("C:\Tartu Ulikool\Data Mining\DataMining2014\HW6\practice6.out")
 ("C:\Tartu Ulikool\Data Mining\DataMining2014\HW6\practice6.out")
 \@outlinefile=\write3
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 64.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 65.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1pcr.fd"
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
@@ -462,16 +462,16 @@ Missing character: There is no ù in font cmr10!
  [1
 
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 94.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 96.
  [2]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 94.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 96.
 
 ("C:\Tartu Ulikool\Data Mining\DataMining2014\HW6\practice6.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 94.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 94.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 96.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 96.
 Package rerunfilecheck Info: File `practice6.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 94.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 96.
  ) 
 Here is how much of TeX's memory you used:
  10899 strings out of 493921
@@ -480,14 +480,14 @@ Here is how much of TeX's memory you used:
  14055 multiletter control sequences out of 15000+200000
  9737 words of font info for 36 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 42i,6n,41p,745b,1667s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 42i,6n,41p,443b,1667s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program File
 s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX
  2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/font
 s/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
 ublic/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/courie
 r/ucrr8a.pfb>
-Output written on practice6.pdf (2 pages, 78103 bytes).
+Output written on practice6.pdf (2 pages, 77393 bytes).
 PDF statistics:
  60 PDF objects out of 1000 (max. 8388607)
  22 named destinations out of 1000 (max. 500000)
