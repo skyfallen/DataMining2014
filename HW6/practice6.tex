@@ -85,39 +85,30 @@ Install and run mldemos (\url{http://mldemos.epfl.ch/}). Try out the clustering 
 Once you have identified the unexpcted situations, propose some remedy for it. In other words, propose some heuristics how to overcome these issues.
 
 \section*{Task 5}
-In the lecture we have discussed the principle of self-organizing maps (SOM), which is very powerful and widely used clustering method, now we shall practice using them. Consider the following one dimensional data set $D$ that contains ten points: 
-\begin{lstlisting}
-Point index		Points
-1			1
-2			1
-3			1
-4			1
-5			1
-6			10
-7			10
-8			10
-9			10
-10			10
-\end{lstlisting}
-We are trying to cluster above data set using one dimensional SOM that has four nodes with the following indexes:
-\begin{lstlisting}
-Node index		Nodes
-1			2
-2			4
-3			6
-4			8
-\end{lstlisting}
-Your task will be to simulate five iterations of SOM algorithm using following parameters:
-\[ \theta(u,v) = \left\{ 
+In the lecture we have discussed the principle of self-organizing maps (SOM), which is very powerful and widely used clustering method. Now we shall practice using it.\\ You are given following 1-D input vector $\textbf{p} = \{1,1,1,1,1,10,10,10,10,10\}$ that can be regarded as 10 separate 1-D data points (Note, we are using small bold letters to address vectors). We are trying to cluster these data points using SOM that has four nodes (some time regarded as neurons). The tricky part is that every node in this grid (SOM) is at the same time associated with grid coordinate and weight. In our case four nodes are represented by the grid coordinate vector $\textbf{v} = \{1,2,3,4\}$ and vector of weights  $\textbf{w} = \{2,4,6,8\}$, such that for example node with grid coordinate 2 has weight 4, and node with grid coordinate 4, has weight 8.\\
+Your task will be to simulate five iterations of SOM algorithm, which can be summarized as follows: 
+\begin{itemize}
+\item Choose one data point $p \in\textbf{p}$ at random
+\item Find the best matching unit (BMU) $u$  for the chosen point $p$, it is the node with smallest Euclidean distance to the given point.
+\item Update  each node weight $w[i], i \in \{1,2,3,4\}$ using following formula:
+$$
+w[i] = w[i] + \theta(u, v[i])\cdot\alpha\cdot(p - w[i]),
+$$
+where  $\theta(u,v[i])$ is a neighborhood function, which is defined:
+\[ \theta(u, v[i]) = \left\{ 
   \begin{array}{l l}
-    1 & \quad \text{if $u = v$}\\
-    0.5 & \quad \text{if $|u - v| = 1$}\\
+    1 & \quad \text{if $u = v[i]$}\\
+    0.5 & \quad \text{if $|u - v[i]| = 1$}\\
     0 & \quad \text{otherwise}
  \end{array} \right.\]
+and
 $$
-\alpha(s) = 0.01
+\alpha = 0.01
 $$
-where $\theta(u,u_{winner})$ is a neighborhood function, and $\alpha(s)$ is a learning restraint of the algorithm.
+where, $u$ and $v[i]$ are the \textbf{grid node coordinates} not  \textbf{weights} and $\alpha$ is a $\textbf{learning restraint}$ of the algorithm.
+
+%\itme{ one data point $p \in \textbf{p}$}\\
+\end{itemize}
 
 Here we will show how to perform first iteration, your task is to perform the rest four iterations and report...
 
