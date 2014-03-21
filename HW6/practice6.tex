@@ -89,8 +89,8 @@ In the lecture we have discussed the principle of self-organizing maps (SOM), wh
 Your task will be to simulate five iterations of SOM algorithm, which can be summarized as follows: 
 \begin{itemize}
 \item Choose one data point $p \in\textbf{p}$ at random
-\item Find the best matching unit (BMU) $u$  for the chosen point $p$, it is the node with smallest Euclidean distance to the given point.
-\item Update  each node weight $w[i], i \in \{1,2,3,4\}$ using following formula:
+\item Find the best matching unit (BMU) $u$  for the chosen point $p$, it is the node, whose ``weight'' has the smallest Euclidean distance to the data point.
+\item Update  each node weight $w[i], i \in \{1,2,3,4\}$ using the following formula:
 $$
 w[i] = w[i] + \theta(u, v[i])\cdot\alpha\cdot(p - w[i]),
 $$
@@ -105,16 +105,16 @@ and
 $$
 \alpha = 0.1
 $$
-where, $u$ and $v[i]$ are the grid node coordinates \textbf{not  weights} and $\alpha$ is a $\textbf{learning restraint}$ of the algorithm.
+where, $u$ and $v[i]$ are the grid node coordinates \textbf{not  weights} and $\alpha$ is a $\textbf{learning rate}$ of the algorithm.
 
 %\itme{ one data point $p \in \textbf{p}$}\\
 \end{itemize}
 
 Here we will show how to perform first iteration, your task is to perform the rest four iterations and report resulting vector of grid node weights  $\textbf{w}$.
 \begin{itemize}
-\item So, first let us choose a random data point from $\textbf{p} = \{1,1,1,1,1,10,10,10,10,10\}$, let it be $p = 10$.
-\item Then, we need to find the best matching unit for the chosen point, for that we need to calculate an Euclidean distance between $p$ and every element from weight vector \textbf{w} (Note, in 1-D space Euclidean distance between two points is just a difference between those points). Thus, calculation are the following: p - w[1] = 8, p - w[2] = 6, p - w[3] = 4, p - w[4] = 2. We should pick up the node with the smallest distance, it is node number 4, this is our $u$.
-\item Using the above formula to update vector of weights, starting with the first element:
+\item So, first let us choose a random data point from $\textbf{p}$, let it be $p = 10$.
+\item Then, we need to find the best matching unit for the chosen point $p$, for that we need to calculate an Euclidean distance between $p$ and every element from weight vector \textbf{w} (Note, in 1-D space Euclidean distance between two points is just a difference between those points). Thus, calculations are the following: p - w[1] = 8, p - w[2] = 6, p - w[3] = 4, p - w[4] = 2. We should pick up the node with the smallest distance, it is node number 4, this is our $u$.
+\item Use the above formula to update vector of weights, starting with the first element:
 $$
 w[1] = w[1] + \theta(u, v[1])\cdot\alpha\cdot(p - w[1]),
 $$
@@ -133,12 +133,24 @@ $$
 w[4] = 8 + 1\cdot0.1\cdot2 = 8.2
 $$
 \end{itemize}
-Repeat this process four more times. Try to make your ``random'' choose two more ones and two more tens. Explain the results.
+Repeat this process four more times. Suppose that the data point ``10'' is chosen during next two iterations, and the data point ``1'' - during the last two.
+
+If you have not understood a word from above task, try to use several tutorials about SOMs:
+\begin{itemize}
+\item \url{https://courses.cs.ut.ee/MTAT.03.183/2014_spring/uploads/Main/DM_L05_cluster.pdf}
+\item \url{http://www.cbs.dtu.dk/courses/27618.chemo/27618_lecture_clustering_part2.pdf}
+\item \url{http://www.csc.kth.se/utbildning/kth/kurser/DD2432/ann14/som.pdf}
+\end{itemize}
 \section*{Task 6 (bonus, up to 2pt)}
-Implement SOM from task 5 and compare the results. 1 point will be granted for adapting existing solutions (functions, packages, source codes etc.) and 2 points for your own code effort in any language you like. In both cases explain your approach properly, do not just list the source code. 
+Implement SOM from task 5 and compare the results. 1 point will be granted for adapting existing solutions (functions, packages, source codes etc.) and 2 points for your own code effort in any programming language you like. In both cases explain your approach properly, do not just list the source code. 
 
 \section*{Task 7 (bonus, up to 2pt)}
-Perform clustering analysis on the students' progress data that we have extracted from the grading spread sheet of our course. Data set is attached on the homework web-page. Due to the privacy reasons we could not show personal information. As this exercise is a bonus, don't limit yourself with k-means or k-medoids, try different clustering approaches that you have learned so far. 
-Pose interesting questions e.g. can you distinguish between different groups, do you see the difference in grading style of TAs, or perhaps you can identify people that work together on homeoworks etc. Try to visualize your hypothesis, use statistics that we have studied previously. Be creative!
-Points will be granted depending on how many different data mining methods you will manage to cover - clustering, statistical methods, smart visualization etc. 
+Perform clustering analysis on the students' progress data that we have extracted from the grading spread sheet of our course. Data set is attached on the homework web-page. Due to the privacy reasons we could not show personal information. As this exercise is a bonus, don't limit yourself with k-means or k-medoids, try different clustering approaches that you have learned so far. \\
+Pose interesting questions e.g. can you distinguish between different study groups, do you see the difference in grading style of TAs, or perhaps you can identify people that work together on homeoworks etc. Try to visualize your hypothesis, use statistics that we have studied previously. Be creative!\\
+Points will be granted depending on how many different data mining methods you will manage to cover - clustering, statistical methods, smart visualization etc.\\\\
+This data set has missing values that you have to substitute with 0. If you use R, try these two lines (do not forget that copy paste from PDF can be misleading):
+\begin{lstlisting}
+progress5 = sapply(progress4, function(x) as.numeric(gsub(" ", "0", x))) 
+progress5[is.na(progress5)] <- 0
+\end{lstlisting}
 \end{document}
