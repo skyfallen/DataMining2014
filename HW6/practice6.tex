@@ -85,7 +85,41 @@ Install and run mldemos (\url{http://mldemos.epfl.ch/}). Try out the clustering 
 Once you have identified the unexpcted situations, propose some remedy for it. In other words, propose some heuristics how to overcome these issues.
 
 \section*{Task 5}
-In the lecture we described the self-organizing maps (SOM) and their principle. make sure you understand how it works. Write the pseudocode of the SOM algorithm with your comments. 
+In the lecture we have discussed the principle of self-organizing maps (SOM), which is very powerful and widely used clustering method, now we shall practice using them. Consider the following one dimensional data set $D$ that contains ten points: 
+\begin{lstlisting}
+Point index		Points
+1			1
+2			1
+3			1
+4			1
+5			1
+6			10
+7			10
+8			10
+9			10
+10			10
+\end{lstlisting}
+We are trying to cluster above data set using one dimensional SOM that has four nodes with the following indexes:
+\begin{lstlisting}
+Node index		Nodes
+1			2
+2			4
+3			6
+4			8
+\end{lstlisting}
+Your task will be to simulate five iterations of SOM algorithm using following parameters:
+\[ \theta(u,v) = \left\{ 
+  \begin{array}{l l}
+    1 & \quad \text{if $u = v$}\\
+    0.5 & \quad \text{if $|u - v| = 1$}\\
+    0 & \quad \text{otherwise}
+ \end{array} \right.\]
+$$
+\alpha(s) = 0.01
+$$
+where $\theta(u,u_{winner})$ is a neighborhood function, and $\alpha(s)$ is a learning restraint of the algorithm.
+
+Here we will show how to perform first iteration, your task is to perform the rest four iterations and report...
 
 \section*{Task 6 (2pt)}
 Implement your 2-D SOM algorithm yourself and apply it on the data of xxx.
