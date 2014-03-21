@@ -103,17 +103,39 @@ where  $\theta(u,v[i])$ is the neighborhood function, which is defined:
  \end{array} \right.\]
 and
 $$
-\alpha = 0.01
+\alpha = 0.1
 $$
 where, $u$ and $v[i]$ are the grid node coordinates \textbf{not  weights} and $\alpha$ is a $\textbf{learning restraint}$ of the algorithm.
 
 %\itme{ one data point $p \in \textbf{p}$}\\
 \end{itemize}
 
-Here we will show how to perform first iteration, your task is to perform the rest four iterations and report...
-
+Here we will show how to perform first iteration, your task is to perform the rest four iterations and report resulting vector of grid node weights  $\textbf{w}$.
+\begin{itemize}
+\item So, first let us choose a random data point from $\textbf{p} = \{1,1,1,1,1,10,10,10,10,10\}$, let it be $p = 10$.
+\item Then, we need to find the best matching unit for the chosen point, for that we need to calculate an Euclidean distance between $p$ and every element from weight vector \textbf{w} (Note, in 1-D space Euclidean distance between two points is just a difference between those points). Thus, calculation are the following: p - w[1] = 8, p - w[2] = 6, p - w[3] = 4, p - w[4] = 2. We should pick up the node with the smallest distance, it is node number 4, this is our $u$.
+\item Using the above formula to update vector of weights, starting with the first element:
+$$
+w[1] = w[1] + \theta(u, v[1])\cdot\alpha\cdot(p - w[1]),
+$$
+let us recall that $u$ = 4, $v[1]$ = 1, $p$ = 10, $\alpha = 0.1$ and $w[1]$ = 2. Also, $\theta(4, 1) = 0$, because $|4 - 1|$ \textgreater  1. Thus,
+$$
+w[1] = 2 + 0\cdot0.1\cdot8 = 2,
+$$
+the same is applied to other three elements.
+$$
+w[2] = 4 +  0\cdot0.1\cdot6 = 4,
+$$
+$$
+w[3] = 6 + 0.5\cdot0.1\cdot4 = 6.2
+$$
+$$
+w[4] = 8 + 1\cdot0.1\cdot2 = 8.2
+$$
+\end{itemize}
+Repeat this process four more times. Try to make your ``random'' choose two more ones and two more tens. Explain the results.
 \section*{Task 6 (bonus, up to 2pt)}
-Implement SOM from task 5 and compare the results. 1 point will be granted for adapting existing implementation and 2 points for your own code effort in any language you like. In both cases explain your approach properly, do not just list the source code. 
+Implement SOM from task 5 and compare the results. 1 point will be granted for adapting existing solutions (functions, packages, source codes etc.) and 2 points for your own code effort in any language you like. In both cases explain your approach properly, do not just list the source code. 
 
 \section*{Task 7 (bonus, up to 2pt)}
 Perform clustering analysis on the students' progress data that we have extracted from the grading spread sheet of our course. Data set is attached on the homework web-page. Due to the privacy reasons we could not show personal information. As this exercise is a bonus, don't limit yourself with k-means or k-medoids, try different clustering approaches that you have learned so far. 
