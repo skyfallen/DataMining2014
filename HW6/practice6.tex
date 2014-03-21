@@ -94,7 +94,7 @@ Your task will be to simulate five iterations of SOM algorithm, which can be sum
 $$
 w[i] = w[i] + \theta(u, v[i])\cdot\alpha\cdot(p - w[i]),
 $$
-where  $\theta(u,v[i])$ is a neighborhood function, which is defined:
+where  $\theta(u,v[i])$ is the neighborhood function, which is defined:
 \[ \theta(u, v[i]) = \left\{ 
   \begin{array}{l l}
     1 & \quad \text{if $u = v[i]$}\\
@@ -105,17 +105,18 @@ and
 $$
 \alpha = 0.01
 $$
-where, $u$ and $v[i]$ are the \textbf{grid node coordinates} not  \textbf{weights} and $\alpha$ is a $\textbf{learning restraint}$ of the algorithm.
+where, $u$ and $v[i]$ are the grid node coordinates \textbf{not  weights} and $\alpha$ is a $\textbf{learning restraint}$ of the algorithm.
 
 %\itme{ one data point $p \in \textbf{p}$}\\
 \end{itemize}
 
 Here we will show how to perform first iteration, your task is to perform the rest four iterations and report...
 
-\section*{Task 6 (2pt)}
-Implement your 2-D SOM algorithm yourself and apply it on the data of xxx.
+\section*{Task 6 (bonus, up to 2pt)}
+Implement SOM from task 5 and compare the results. 1 point will be granted for adapting existing implementation and 2 points for your own code effort in any language you like. In both cases explain your approach properly, do not just list the source code. 
 
-\section*{Task 7 (2pt)}
-Perform clustering analysis on the data of students' progress from this course. Here (link to the data) is a slightly modified version with some personal information added. Due to the privacy reasons we could not add too many columns. As this exercise is a bonus, don't limit yourself with k-means or k-medoids, try different clustering approaches that you have learned so far. 
+\section*{Task 7 (bonus, up to 2pt)}
+Perform clustering analysis on the students' progress data that we have extracted from the grading spread sheet of our course. Data set is attached on the homework web-page. Due to the privacy reasons we could not show personal information. As this exercise is a bonus, don't limit yourself with k-means or k-medoids, try different clustering approaches that you have learned so far. 
 Pose interesting questions e.g. can you distinguish between different groups, do you see the difference in grading style of TAs, or perhaps you can identify people that work together on homeoworks etc. Try to visualize your hypothesis, use statistics that we have studied previously. Be creative!
+Points will be granted depending on how many different data mining methods you will manage to cover - clustering, statistical methods, smart visualization etc. 
 \end{document}
