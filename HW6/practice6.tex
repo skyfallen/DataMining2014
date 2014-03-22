@@ -82,18 +82,18 @@ Can you find 3 initial ``centers'' for K-means that are different from the cente
 Install and run mldemos (\url{http://mldemos.epfl.ch/}). Try out the clustering with K-means. Identify situations when K-means clearly does not cluster as compared  to the “true” clustering (i.e. the clusters expected by you). Make screenshots and discuss, why it happens. 
 
 \section*{Task 4}
-Once you have identified the unexpcted situations, propose some remedy for it. In other words, propose some heuristics how to overcome these issues.
+Once you have identified the unexpected situations, propose some remedy for it. In other words, propose some heuristics how to overcome these issues.
 
 \section*{Task 5}
-In the lecture we have discussed the principle of self-organizing maps (SOM), which is very powerful and widely used clustering method. Now we shall practice using it.\\ You are given following 1-D input vector $\textbf{p} = \{1,1,1,1,1,10,10,10,10,10\}$ that can be regarded as 10 separate 1-D data points (Note, we are using small bold letters to address vectors). We are trying to cluster these data points using SOM that has four nodes (some time regarded as neurons). The tricky part is that every node in this grid (SOM) is at the same time associated with grid coordinate and weight. In our case four nodes are represented by the grid coordinate vector $\textbf{v} = \{1,2,3,4\}$ and vector of weights  $\textbf{w} = \{2,4,6,8\}$, such that for example node with grid coordinate 2 has weight 4, and node with grid coordinate 4, has weight 8.\\
-Your task will be to simulate five iterations of SOM algorithm, which can be summarized as follows: 
+In the lecture we have discussed the principle of self-organizing maps (SOM), which is very powerful and widely used clustering method. Now we shall practice using it.\\ You are given following 1-D input vector $\textbf{p} = \{1,1,10,10,10\}$ that can be regarded as 5 separate 1-D data points. We are trying to cluster these data points using SOM that has four nodes (some time regarded as neurons). The tricky part is that every node in this grid (SOM) is at the same time associated with grid coordinate and weight. In our case four nodes are represented by the grid coordinate vector $\textbf{v} = \{1,2,3,4\}$ and vector of weights  $\textbf{w} = \{2,4,6,8\}$, such that for example node with grid coordinate 2 has weight 4, and node with grid coordinate 4, has weight 8.\\
+Your task will be to simulate five iterations ($\forall$ $p$ $\in\textbf{p}$) of SOM algorithm, which can be summarized as follows: 
 \begin{itemize}
-\item Choose one data point $p \in\textbf{p}$ at random
-\item Find the best matching unit (BMU) $u$  for the chosen point $p$, it is the node, whose ``weight'' has the smallest Euclidean distance to the data point.
-\item Update  each node weight $w[i], i \in \{1,2,3,4\}$ using the following formula:
-$$
+\item Choose one data point $p$ $\in\textbf{p}$ at random
+\item Find the best matching node (in literature best matching unit or BMU) $u$  for the chosen point $p$, it is the node, whose ``weight'' has the smallest Euclidean distance to the data point.
+\item Update each node's weight $w[i], i \in \{1,2,3,4\}$ using the following formula:
+\begin{equation}
 w[i] = w[i] + \theta(u, v[i])\cdot\alpha\cdot(p - w[i]),
-$$
+\end{equation}
 where  $\theta(u,v[i])$ is the neighborhood function, which is defined:
 \[ \theta(u, v[i]) = \left\{ 
   \begin{array}{l l}
@@ -110,11 +110,11 @@ where, $u$ and $v[i]$ are the grid node coordinates \textbf{not  weights} and $\
 %\itme{ one data point $p \in \textbf{p}$}\\
 \end{itemize}
 
-Here we will show how to perform first iteration, your task is to perform the rest four iterations and report resulting vector of grid node weights  $\textbf{w}$.
+Here we will show how to perform first iteration.
 \begin{itemize}
 \item So, first let us choose a random data point from $\textbf{p}$, let it be $p = 10$.
-\item Then, we need to find the best matching unit for the chosen point $p$, for that we need to calculate an Euclidean distance between $p$ and every element from weight vector \textbf{w} (Note, in 1-D space Euclidean distance between two points is just a difference between those points). Thus, calculations are the following: p - w[1] = 8, p - w[2] = 6, p - w[3] = 4, p - w[4] = 2. We should pick up the node with the smallest distance, it is node number 4, this is our $u$.
-\item Use the above formula to update vector of weights, starting with the first element:
+\item Then we find the best matching node for $p$, by calculating an Euclidean distance between $p$ and every $w$ $\in\textbf{w}$ (Note, in 1-D space Euclidean distance between two points is just a difference between those points): p~-~w[1]~=~8, p~-~w[2] = 6, p - w[3] = 4, p - w[4] = 2. Thus, the best matching node $u$ is the node number 4 with the smallest distance 2.
+\item Use the formula (1) to update vector of weights, starting with the first element:
 $$
 w[1] = w[1] + \theta(u, v[1])\cdot\alpha\cdot(p - w[1]),
 $$
@@ -133,7 +133,7 @@ $$
 w[4] = 8 + 1\cdot0.1\cdot2 = 8.2
 $$
 \end{itemize}
-Repeat this process four more times. Suppose that the data point ``10'' is chosen during next two iterations, and the data point ``1'' - during the last two.
+Finally, your task is to perform the rest four iterations and report resulting vector of grid node weights  $\textbf{w}$. For this purpose repeat this process four times. Suppose that the data point ``10'' is chosen during next two iterations, and the data point ``1'' - during the last two.
 
 If you have not understood a word from above task, try to use several tutorials about SOMs:
 \begin{itemize}
@@ -142,15 +142,15 @@ If you have not understood a word from above task, try to use several tutorials 
 \item \url{http://www.csc.kth.se/utbildning/kth/kurser/DD2432/ann14/som.pdf}
 \end{itemize}
 \section*{Task 6 (bonus, up to 2pt)}
-Implement SOM from task 5 and compare the results. 1 point will be granted for adapting existing solutions (functions, packages, source codes etc.) and 2 points for your own code effort in any programming language you like. In both cases explain your approach properly, do not just list the source code. 
+Implement SOM from task 5 and compare the results. 1 point will be granted for adapting existing solutions (functions, packages, source codes etc.) and 2 points for your own code effort in any programming language you like. In both cases explain your approach properly, include source code as a separate file (do not list it in the PDF). 
 
 \section*{Task 7 (bonus, up to 2pt)}
-Perform clustering analysis on the students' progress data that we have extracted from the grading spread sheet of our course. Data set is attached on the homework web-page. Due to the privacy reasons we could not show personal information. As this exercise is a bonus, don't limit yourself with k-means or k-medoids, try different clustering approaches that you have learned so far. \\
+Perform clustering analysis on the students' progress data that we have extracted from the grading spread sheet of our course. Data set is attached on the homework web-page. Due to the privacy reasons we could not show personal information. As this exercise is a bonus, don't limit yourself with K-means or K-medoids, try different clustering approaches that you have learned so far. \\
 Pose interesting questions e.g. can you distinguish between different study groups, do you see the difference in grading style of TAs, or perhaps you can identify people that work together on homeoworks etc. Try to visualize your hypothesis, use statistics that we have studied previously. Be creative!\\
 Points will be granted depending on how many different data mining methods you will manage to cover - clustering, statistical methods, smart visualization etc.\\\\
 This data set has missing values that you have to substitute with 0. If you use R, try these two lines (do not forget that copy paste from PDF can be misleading):
 \begin{lstlisting}
-progress5 = sapply(progress4, function(x) as.numeric(gsub(" ", "0", x))) 
-progress5[is.na(progress5)] <- 0
+progress2 = sapply(progress, function(x) as.numeric(gsub(" ", "0", x))) 
+progress2[is.na(progress2)] <- 0
 \end{lstlisting}
 \end{document}
