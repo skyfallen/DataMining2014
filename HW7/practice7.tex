@@ -67,7 +67,7 @@ Use already well-studied example dataset from two previous homeworks and apply D
 \section*{Task 3}
 Take a look at the following tool: \url{http://biit.cs.ut.ee/misc/imgvalidate/}. There is a file already uploaded for you. It contains 388 rows (from rev0 to rev387) of a picture. Values in each row correspond to "pixel color values" - rgb components of a pixel. In this file rows are shuffled. For example, if you insert the row ids as they are provided in the shuffled document (like here: ), you will see a mess. Your task is to recover an original picture using 1-D Self-organizing maps (SOM), where a vector of grid coordinates $\mathbf{v} = \{0,1,2,3..,387\}$ and a vector of weights $\mathbf{w} = \{\boldsymbol{w_0,w_1,..,w_{387}}\}$, 
 where $\boldsymbol{w_i}$ is each row of a picture(see HW 6.5 for the explanation of SOM notations).
-If you manage to cluster and/or serialize rows properly, then you will see an image of Mona Lisa.
+If you manage to cluster and/or serialize rows properly, then you can retore the original picture. What was on the original picture?
 
 \section*{Task 4}
 Compare results from task 3 with another clustering or seriation method (e.g. K-means, DBSCAN, two-way seriation etc.).
