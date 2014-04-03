@@ -214,32 +214,43 @@ hist(rexp(100))
 
 #----Just useful commands---#
 ls()
-rm(complicated_list)
+rm(empty_df)
 ls()
 getwd()
 setwd("C:\\Users\\v-anleon\\Desktop\\Tartu_University\\DataMining2014\\Practices")
 library()   # see all packages installed 
 search()    # see packages currently loaded
-install.packages("ggplot2")
+#install.packages("ggplot2")
 
 library(ggplot2)
 
+
+x = matrix(c(1,0,1,0,1,0), ncol=2)
+
+
 #Reading data
-iris = read.table("C:\\Users\\v-anleon\\Desktop\\Tartu_University\\DataMining2014\\Practices\\iris.data.txt", header=FALSE, sep=',')
+iris = read.table("C:\\Users\\v-anleon\\Desktop\\Tartu_University\\DataMining2014\\Practices\\iris.data.txt", header=TRUE, sep=',')
 names(iris) = c("Sepal.Length", "Sepal.Width", "Petal.Length", "Petal.Width", "Species")
 head(iris)
 class(iris)
 str(iris)
 dim(iris)
 nrow(iris)
-rnorm(max = )
+
 
 #scan produces vector, read.csv has some additional options
 #to read an R code from external file:
-#source('code.R')
+source('tmp.R')
+
+
+library(kohonen)
+install.packages("som")
+library(som)
 
 #Writing data
 write.table(iris, "C:\\Users\\v-anleon\\Desktop\\Tartu_University\\DataMining2014\\Practices\\iris.data.txt", col.names = TRUE, row.names = FALSE, sep =',')
+
+
 
 #manipulating with the data
 #illustration with missing data
@@ -279,13 +290,13 @@ subset(iris, Sepal.Width >= 4)
 subset(iris, Sepal.Width >= 4 & Petal.Length>1.4)
 subset(iris, Sepal.Width >= 4 | (Species == 'Iris-versicolor' & Sepal.Width < 3))
 
-iris$bla_bla = ifelse(iris$Sepal.Length<5, 1,0)
+subset(iris, Species!="Iris-versicolor" & Sepal.Width <5)
+
+
+iris$flower = ifelse(iris$Sepal.Length<5, "small_flower","big_flower")
 table(iris$bla_bla)
 
-set.seed(34)
-users = sample(1:15, replace=TRUE)
-tmp = data.frame(users)
-tmp$sex = sample(c("Male","Female"),15, replace = TRUE)
+
 
 subset(tmp, sex == 'Female')
 ###########################################################
@@ -297,6 +308,10 @@ duplicated(tmp)
 subset(tmp, duplicated(tmp)==TRUE)
 unique(tmp)
 ###########################################################
+
+x = c(2,3,4,5,6,9)
+y = c(5,6,8,9,1,0)
+plot(x,y)
 
 #cut, cut2
 library(Hmisc)
@@ -320,6 +335,8 @@ length(idx_train)
 train = iris[idx_train,]
 test = iris[-idx_train,]
 
+#iris = rbind.data.frame(iris,train) 
+
 
 #for loop vs apply
 for(i in 1:ncol(iris[,c(1:4)])) {
@@ -330,12 +347,17 @@ apply(iris[,c(1:4)], 2, median)
 apply(iris[,c(1:4)], 2, mean)
 apply(iris[,c(1:4)], 2, sd) 
 
+
 ddply(iris, .(Species, Sepal.Length.bins), summarize, mean = round(mean(Petal.Width), 2), sd = round(sd(Petal.Width), 2))
 
 
 ###########################################################
 #Exercise 8
 #Simplify the following code: make it without for loop. 
+set.seed(34)
+users = sample(1:15, replace=TRUE)
+tmp = data.frame(users)
+tmp$sex = sample(c("Male","Female"),15, replace = TRUE)
 
 tmp$bought <- rep(0, nrow(tmp))
 for (i in 1:length(tmp$bought)) {
@@ -365,6 +387,8 @@ hist(iris$Petal.Width, freq = FALSE)
 lines(density(iris$Petal.Width), col ='red')
 par(mfrow=c(1,1))
 
+hist(iris$Sepal.Width)
+
 
 heatmap(as.matrix(iris[,c(1:4)]))
 
@@ -372,6 +396,7 @@ library(ggplot2)
 ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width))+ geom_point()
 ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width,color = Species))+ geom_point()
 ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width,color = Species, size = Petal.Width))+ geom_point()
+ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width))+ geom_point()+facet_grid(Species~.)
 
 
 #writing your own function
@@ -385,6 +410,8 @@ f(5)
 newf <- function(a,b)
 {
   x = runif(10,a,b)
-  mean(x)
+  z = mean(x)
+  return(z)
 }
-newf(5,6)
+var= newf(5,6)
+var
