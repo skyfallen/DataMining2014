@@ -1,0 +1,90 @@
+\documentclass{article}
+
+\usepackage{courier}
+\usepackage{graphicx} % Required for the inclusion of images
+\usepackage{listings}
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{subcaption}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage[toc,page]{appendix}
+\usepackage{dcolumn}
+\usepackage{pdflscape}
+\usepackage{hyperref}
+\usepackage{framed}
+\usepackage[english]{babel}
+\usepackage{soul}
+
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+\renewcommand{\labelenumi}{\alph{enumi}.} % Make numbering in the enumerate environment by letter rather than number (e.g. section 6)
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=R,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true
+  tabsize=3
+}
+
+%\usepackage[colorlinks]{hyperref}
+\hypersetup{linkcolor=DarkRed}
+\hypersetup{urlcolor=DarkBlue}
+\usepackage{cleveref}
+
+\title{Data Mining\\Homework Assignment \#8} % Title
+
+\author{Dmytro Fishman, Anna Leontjeva and Jaak Vilo} % Author name
+
+\begin{document}
+
+\maketitle % Insert the title, author and date
+
+\st{You are free to use any programming language you are comfortable with}. You will use Weka in this homework. Install weka from \url{http://www.cs.waikato.ac.nz/~ml/weka}. Click around. Check the tutorial and other documentation here: \url(http://www.cs.waikato.ac.nz/ml/weka/documentation.html.
+
+\section*{Task 1}
+We will start working with Weka using "Explorer" functionality. Now load diabetes dataset, which comes with the weka. To do so click on "Open file" and find "Weka" folder with "datasets" inside. Use file diabetes.arff for this task. Open it and explore options of "Preprocess" tab. The description of diabetes dataset is here: \url{http://classes.soe.ucsc.edu/cmps142/Winter10/handouts/diabetes.arff}. 
+Next, choose "Classify" tab. Select J48 classifier ("choose" button and folder "trees"), and run it, leaving default parameters. Interpret the learned tree, plot it(right click on the model in the "Result list"). Characterize the TP, FP, TN, FN rates, accuracy, precision, recall on this data. Make sure that you understand these metrics (intuitively and how they are calculated). What can be learned from this output?
+
+\section*{Task 2}
+Read more about ROC from Konstantin Tretyakov's blog post (\url{http://fouryears.eu/2011/10/12/roc-area-under-the-curve-explained/}) and/or the following Tom Fawcett's article: \url{http://tsam-fich.wdfiles.com/local--files/apuntes/ROCintro.pdf}. Plot the Receiving Operating Characteristic curve (ROC) for the model in Task 1 (right click on the model in "Result list" and "Visualize threshold curve"). Interpret it. Take a look at three examples below and answer the questions:
+
+
+
+
+\section*{Task 3}
+Take a look at the following tool: \url{http://biit.cs.ut.ee/misc/imgvalidate/}. There is a file already uploaded for you. It contains 388 rows (from rev0 to rev387) of a picture. Values in each row correspond to "pixel color values" - rgb components of a pixel. In this file rows are shuffled. For example, if you insert the row ids as they are provided in the shuffled document (like here: ), you will see a mess. Your task is to recover an original picture using 1-D Self-organizing maps (SOM), where a vector of grid coordinates $\mathbf{v} = \{0,1,2,3..,387\}$ and a vector of weights $\mathbf{w} = \{\boldsymbol{w_0,w_1,..,w_{387}}\}$, 
+where $\boldsymbol{w_i}$ is each row of a picture(see HW 6.5 for the explanation of SOM notations).
+If you manage to cluster and/or serialize rows properly, then you can restore the original picture. What was on the original picture?
+
+\section*{Task 4}
+Compare results from task 3 with another clustering or seriation method (e.g. K-means, DBSCAN, two-way seriation etc.).
+
+\section*{Task 5}
+Look at example of binary matrices from here (tarball here). Write a script that calculates some goodness measure for estimating how good the “two-way seriation” is. For example, give a reward for 1-s maximally surrounded by 1-s. Explain your measure and describe on toy examples how to maximize this measure by reordering. In the following example, the proceeding matrices would be more expensive than previous ones:
+\begin{verbatim}
+10101     10101    11100
+01010 ->  10101 -> 11100
+10101     01010    00011 
+\end{verbatim}
+
+
+\section*{Task 6 (2pt)}
+Write a program that performs re-ordering of rows and columns and tries to optimize for measure devised in the task 5. You can attempt some brute force, or evolutionary strategies (genetic programming, differential evolution, simulated annealing, etc). How big examples can you handle and how certain can you be that your code gives a good (or best) answer?
+
+\end{document}
