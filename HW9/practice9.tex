@@ -43,6 +43,20 @@
   tabsize=3
 }
 
+\newcommand{\footlabel}[2]{%
+    \addtocounter{footnote}{1}%
+    \footnotetext[\thefootnote]{%
+        \addtocounter{footnote}{-1}%
+        \refstepcounter{footnote}\label{#1}%
+        #2%
+    }%
+    $^{\ref{#1}}$%
+}
+
+\newcommand{\footref}[1]{%
+    $^{\ref{#1}}$%
+}
+
 %\usepackage[colorlinks]{hyperref}
 \hypersetup{linkcolor=DarkRed}
 \hypersetup{urlcolor=DarkBlue}
@@ -56,7 +70,7 @@
 
 \maketitle % Insert the title, author and date
 
-You are free to use any programming language you are comfortable with (unless otherwise stated). 
+You are free to use any programming language you are comfortable with (unless otherwise stated).
 
 \section*{Task 1}
 Consider the following dataset:
@@ -73,22 +87,25 @@ No    No    No
 No    No    No
 No    No    No
 \end{verbatim}
-It is windy and not sunny today. Manually calculate a prediction for playing tennis using a Bayes classifier. Do the same using Na\"{\i}ve Bayes classifier. Which prediction is correct? Why? What properties of the Na\"{\i}ve Bayes classifier are involved? 
+It is \emph{windy} and \emph{not sunny} today. Manually calculate a prediction for playing tennis using a Bayes classifier. Do the same using Na\"{\i}ve Bayes classifier. Which prediction is correct? Why? What properties of the Na\"{\i}ve Bayes classifier are involved? \footlabel{note1}{The task is based on \url{http://courses.cs.ut.ee/2009/dm/uploads/Main/DM_HW7_ML_II.pdf}}
 
 \section*{Task 2}
-Use the same dataset as in Task 1 and manually calculate ID3 tree. Provide some intermediate steps and draw the final decision tree. Compare with the results in Task 1. 
+Use the same dataset as from Task 1 and manually construct an ID3 tree. Provide some intermediate steps and draw the final decision tree. Compare with the results in Task 1. 
 
 \section*{Task 3}
 Netflix was running a \$1M challenge for the best possible machine learning algorithm (\url{http://courses.washington.edu/css490/2012.Winter/lecture_slides/08a_Netflix_Prize.pptx}). The test set was used to measure the goodness of the current best method (and call the competition to an end when the first team would beat the state of the art method by more than $10\%$. I.e. everyone could evaluate their best algorithm against this test data and get their current standing in the rankings. But the final evaluation happened on the third data set that was completely hidden from any contestants until the competition had ended. Why was that? Explain the reasons for this third data set for evaluations.
 
 \section*{Task 4}
 Suppose you are given a task of classifying texts (e.g. sorting e-mail as spam or not). Is it a good idea to apply the K-nearest neighbors algorithm? How could you apply it? What if your training set is very large, how would you solve the algorithm performance problems?
-Be reasonably brief: no more than two-three short paragraphs total.
+Be reasonably brief: no more than two-three short paragraphs total.\footref{note1}
 
 \section*{Task 5}
-Find yourself a project group (up to 3 person). Agree on a project topic area. Write group members, project title and an abstract of your project. During practice session we will discuss the proposed projects. Later you can decide whether to stick with your topic or to pick the one that will be proposed. 
+Find yourself a project group (up to 3 persons). Agree on a project topic area. Write group members, project title and an abstract of your project. During practice session we will discuss the proposed projects. Later you can decide whether to stick with your topic or to pick the one that will be proposed. 
 
 
-\section*{Task 6}(2 points)
+\section*{Task 6}
+Try building a classifier for discriminating spam messages. You have two options: use my\_mails.txt for building your own classifier with any programming language of your preference (worth 2 points) or my\_mails.arff and Weka (worth 1 point). How good is your classifier? What words contribute mostly to its decisions? You are free to approach this task in any way you deem appropriate.\footref{note1}\\
+
+Note, after loading the file into Weka you will need to convert the string to a set of binary variables, one for each word. This can be done using the \emph{StringToWordVector} filter. Also you need to transform your data from numerical to nominal by applying corresponding filter. 
 
 \end{document}
