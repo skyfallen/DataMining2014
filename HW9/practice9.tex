@@ -1,0 +1,94 @@
+\documentclass{article}
+
+\usepackage{courier}
+\usepackage{graphicx} % Required for the inclusion of images
+\usepackage{listings}
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{subcaption}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage[toc,page]{appendix}
+\usepackage{dcolumn}
+\usepackage{pdflscape}
+\usepackage{hyperref}
+\usepackage{framed}
+\usepackage[english]{babel}
+\usepackage{soul}
+\usepackage{caption}
+\captionsetup[figure]{labelformat=empty}%
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+\renewcommand{\labelenumi}{\alph{enumi}.} % Make numbering in the enumerate environment by letter rather than number (e.g. section 6)
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=R,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true
+  tabsize=3
+}
+
+%\usepackage[colorlinks]{hyperref}
+\hypersetup{linkcolor=DarkRed}
+\hypersetup{urlcolor=DarkBlue}
+\usepackage{cleveref}
+
+\title{Data Mining\\Homework Assignment \#9} % Title
+
+\author{Dmytro Fishman, Anna Leontjeva and Jaak Vilo} % Author name
+
+\begin{document}
+
+\maketitle % Insert the title, author and date
+
+You are free to use any programming language you are comfortable with (unless otherwise stated). 
+
+\section*{Task 1}
+Consider the following dataset:
+\begin{verbatim}
+Sunny Windy PlayTennis
+Yes   No    Yes
+Yes   No    Yes
+Yes   No    Yes
+No    Yes   Yes
+No    Yes   Yes
+Yes   Yes   No
+Yes   Yes   No
+No    No    No
+No    No    No
+No    No    No
+\end{verbatim}
+It is windy and not sunny today. Manually calculate a prediction for playing tennis using a Bayes classifier. Do the same using Na\"{\i}ve Bayes classifier. Which prediction is correct? Why? What properties of the Na\"{\i}ve Bayes classifier are involved? 
+
+\section*{Task 2}
+Use the same dataset as in Task 1 and manually calculate ID3 tree. Provide some intermediate steps and draw the final decision tree. Compare with the results in Task 1. 
+
+\section*{Task 3}
+Netflix was running a \$1M challenge for the best possible machine learning algorithm (\url{http://courses.washington.edu/css490/2012.Winter/lecture_slides/08a_Netflix_Prize.pptx}). The test set was used to measure the goodness of the current best method (and call the competition to an end when the first team would beat the state of the art method by more than $10\%$. I.e. everyone could evaluate their best algorithm against this test data and get their current standing in the rankings. But the final evaluation happened on the third data set that was completely hidden from any contestants until the competition had ended. Why was that? Explain the reasons for this third data set for evaluations.
+
+\section*{Task 4}
+Suppose you are given a task of classifying texts (e.g. sorting e-mail as spam or not). Is it a good idea to apply the K-nearest neighbors algorithm? How could you apply it? What if your training set is very large, how would you solve the algorithm performance problems?
+Be reasonably brief: no more than two-three short paragraphs total.
+
+\section*{Task 5}
+Find yourself a project group (up to 3 person). Agree on a project topic area. Write group members, project title and an abstract of your project. During practice session we will discuss the proposed projects. Later you can decide whether to stick with your topic or to pick the one that will be proposed. 
+
+
+\section*{Task 6}(2 points)
+
+\end{document}
