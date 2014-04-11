@@ -70,41 +70,48 @@
 
 \maketitle % Insert the title, author and date
 
-You are free to use any programming language you are comfortable with (unless otherwise stated).
+You are free to use any programming language you are comfortable with (unless otherwise stated). All the terms and notions used in this homework can be found on the lecture sliides \url{https://courses.cs.ut.ee/MTAT.03.183/2014_spring/uploads/Main/DM_L06_ML.pdf}, please take a look.
 
 \section*{Task 1}
-Consider the following dataset:
-\begin{verbatim}
-Sunny Windy PlayTennis
-Yes   No    Yes
-Yes   No    Yes
-Yes   No    Yes
-No    Yes   Yes
-No    Yes   Yes
-Yes   Yes   No
-Yes   Yes   No
-No    No    No
-No    No    No
-No    No    No
-\end{verbatim}
-It is \emph{windy} and \emph{not sunny} today. Manually calculate a prediction for playing tennis using a Bayes classifier. Do the same using Na\"{\i}ve Bayes classifier. Which prediction is correct? Why? What properties of the Na\"{\i}ve Bayes classifier are involved? \footlabel{note1}{The task is based on \url{http://courses.cs.ut.ee/2009/dm/uploads/Main/DM_HW7_ML_II.pdf}}
+Consider the following dataset:\\
+\begin{center}
+\begin{tabular}{{c}{c}{c}{c}{c}}
+Outlook& Temp & Humidity & Windy & Play \\
+\hline
+Sunny & Hot & High & False & No\\
+Sunny & Hot & High & True &  No\\
+Overcast & Hot & High & False & Yes\\
+Rainy & Mild & High & False & Yes\\
+Rainy & Cool & Normal & False & Yes\\
+Rainy & Cool &  Normal & True &  No\\
+Overcast & Cool & Normal & True & Yes\\
+Sunny & Mild & High & False & No\\
+Sunny & Cool & Normal & False & Yes\\
+Rainy & Mild & Normal & False & Yes\\
+Sunny & Mild & Normal & True & Yes\\
+Overcast & Mild & High & True & Yes\\
+Overcast & Hot & Normal & False & Yes\\
+Rainy & Mild & High & True & No\\\\
+\end{tabular}
+\end{center}
+It is quite \emph{windy} and \emph{sunny} today, temperature is \emph{cold} and humidity is \emph{high}. Manually calculate a prediction for playing tennis using a Bayes classifier. Do the same using Na\"{\i}ve Bayes classifier. Which prediction is correct? Why? What properties of the Na\"{\i}ve Bayes classifier are involved? \footlabel{note1}{The task is based on \url{http://courses.cs.ut.ee/2009/dm/uploads/Main/DM_HW7_ML_II.pdf}}
 
 \section*{Task 2}
 Use the same dataset as from Task 1 and manually construct an ID3 tree. Provide some intermediate steps and draw the final decision tree. Compare with the results in Task 1. 
 
 \section*{Task 3}
-Netflix was running a \$1M challenge for the best possible machine learning algorithm (\url{http://courses.washington.edu/css490/2012.Winter/lecture_slides/08a_Netflix_Prize.pptx}). The test set was used to measure the goodness of the current best method (and call the competition to an end when the first team would beat the state of the art method by more than $10\%$. I.e. everyone could evaluate their best algorithm against this test data and get their current standing in the rankings. But the final evaluation happened on the third data set that was completely hidden from any contestants until the competition had ended. Why was that? Explain the reasons for this third data set for evaluations.
+Netflix was running a \$1M prize challenge for the best possible machine learning algorithm (\url{http://courses.washington.edu/css490/2012.Winter/lecture_slides/08a_Netflix_Prize.pptx}). The test set was used to measure the goodness of the current best method and call the competition to an end when the first team would beat the state of the art method (algorithm that was used by Netflix before competition started) by more than $10\%$. I.e. everyone could evaluate their best algorithm against this test data and get their current position  in the rankings. But the final evaluation happened on the third data set that was completely hidden from any contestants until the competition had ended. Why was that? Explain the reasons for this third data set for evaluations.
 
 \section*{Task 4}
 Suppose you are given a task of classifying texts (e.g. sorting e-mail as spam or not). Is it a good idea to apply the K-nearest neighbors algorithm? How could you apply it? What if your training set is very large, how would you solve the algorithm performance problems?
 Be reasonably brief: no more than two-three short paragraphs total.\footref{note1}
 
 \section*{Task 5}
-Read the article by Domingos: A few useful things to know about machine learning (communications of the ACM, Vol. 55 No. 10, Pages 78-87 doi: 10.1145/2347736.2347755 via ACM Digital library, domingos.pdf). Make a list of key messages with a supporting 1-2 sentence example or clarification of that message (something like short summary of the article).
+Read the article by Domingos: A few useful things to know about machine learning (communications of the ACM, Vol. 55 No. 10, Pages 78-87 doi: 10.1145/2347736.2347755 via ACM Digital library, \url{https://courses.cs.ut.ee/MTAT.03.183/2012_fall/uploads/Main/domingos.pdf}). Make a list of key messages with a supporting 1-2 sentence example or clarification of that message (something like short summary of the article).
 
 
 \section*{Task 6}
-Try building a classifier for discriminating spam messages. You have two options: use my\_mails.txt for building your own classifier with any programming language of your preference (worth 2 points) or my\_mails.arff and Weka (worth 1 point). How good is your classifier? What words contribute mostly to its decisions? You are free to approach this task in any way you deem appropriate.\footref{note1}\\
+Try building a classifier for discriminating spam messages. You have two options: use my\textunderscore mails.txt for building your own classifier with any programming language of your preference (worth 2 points) or my\textunderscore mails.arff and Weka (worth 1 point). This data (both files) contains e-mails subjects that were made public as a part of the data mining competition associated with ICONIP 2010. How good is your classifier? What words contribute mostly to its decisions? You are free to approach this task in any way you deem appropriate.\footref{note1}\\
 
 Note, after loading the file into Weka you will need to convert the string to a set of binary variables, one for each word. This can be done using the \emph{StringToWordVector} filter. Also you need to transform your data from numerical to nominal by applying corresponding filter. 
 
