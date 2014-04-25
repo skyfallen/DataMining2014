@@ -17,6 +17,7 @@
 \usepackage{soul}
 \usepackage{caption}
 \usepackage{amsfonts}
+\usepackage{MnSymbol,wasysym}
 \captionsetup[figure]{labelformat=empty}%
 
 \setlength\parindent{0pt} % Removes all indentation from paragraphs
@@ -69,7 +70,7 @@
 
 \begin{document}
 
-\maketitle % Insert the title, author and date
+\maketitle % Insert the title, author and date 
 From the lecture we know that in order to classify two-dimensional points using a linear classifier following classification rule must be applied for each point ($x_1$, $x_2$):
 $$
 f(x) = sign (\textbf{w}\cdot\textbf{x} + b) = sign(w_1x_1 + w_2x_2 + b),
@@ -152,4 +153,6 @@ Could you somehow improve the second student's performance by, say, doing traini
 
 \section*{Task 6}
 In this exercise we shall use the chord sequences of some popular songs by $\textit{The Beatles}$, $\textit{Paul McCartney}$, $\textit{Eric Clapton}$, $\textit{Red Hot Chili Peppers}$, $\textit{Metallica}$ and $\textit{Nirvana}$ from the website \url{http://www.e-chords.com}. Analyze this dataset using whatever machine learning or data mining methods you find applicable. As a minimum, you could check whether it is possible to discriminate the artists on the basis of the chord sequences. However, you need not limit yourself to classification only. Other options, such as clustering, automated chord sequence generation, frequent pattern detection, association rule mining or visualization might be rather exciting. Report your findings.
+\\\\
+This homework includes a lot of small and large chunks of text stolen from homeworks, tutorials and blogs published by Konstantin Tretyakov, yappie! \smiley{} 
 \end{document}
