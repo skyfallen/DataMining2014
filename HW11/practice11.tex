@@ -71,29 +71,38 @@
 \begin{document}
 
 \maketitle % Insert the title, author and date 
-The goal for this homework is to get you started with basics of social network analysis. There are many different network analysis tools. Choose the one you prefer. Some of the well-known tools and packages are: NetworkX and igraph for Python, JUNG for Java, igraph for R, Gephi for the visualization with some built-in calculations and even NodeXL free template for Excel.
-Most of the exercises require you to check presentation slides for the definitions. 
+The goal for this homework is to get you started with basics of social network analysis. %There are many different network analysing tools. Choose the one you prefer. Some of the well-known tools and packages are: NetworkX and igraph for Python, JUNG for Java, igraph for R, Gephi for the visualization with some built-in calculations and even NodeXL free template for Excel.
+Most of the exercises require you to check presentation slides for the definitions.
 
 \section*{Task 1}
-To start with, open SNAP page by Jure Leskovec with the collection of some graphs. Take a look at the data and the description:\\ \url{http://snap.stanford.edu/data/wiki-Vote.html}.\\ 
-Find the subsection files and download Wiki\-Vote.txt.gz.
-Load the data using one of the chosen tools. Note that the network is directed. Calculate the list of the statistics:
+In this task, we will use the techniques of Social Network analysis to study how virus spread. Let us assume terrified biologists came to the Institute of Computer Science seeking for a help. Their email network was infected by the virus that was created by the student that received 'B' for his Master's Thesis and got offended. You are trying poor biologists to estimate the worst case scenario of virus spread. Biologists observed that if virus infects a node, it always infects all its immediate neighbors if they are not already infected (it has 100\% of infection rate). Also we know that virus spreads only along the edge direction (e.g. if virus infects node A, which only has an incoming edge from node B, node B will not be infected). 
+
+Biologists provided you with their directed anonymous email network that you can access on the course web-page. 
+  
+Load the data. To get the first insights about biologists' network, calculate the list of the following statistics:
 \begin{itemize}
 \item number of nodes in the network
 \item number of edges in the network
 \item number of nodes with a self-loop
 \item number of mutual connections or \emph{reciprocated} edges, i.e if there is a directed edge from node a to node b, there is also an edge from b to a. 
-\item number of nodes with zero indegree
-\item number of nodes with zero outdegree
-\item number of nodes with the total degree (both in and out) greater than 30.
+\item number of nodes with zero indegree (those that have only outgoing edges)
+\item number of nodes with zero outdegree (those that have only ingoing edges)
+\item degree distribution of the given network
+\item optionally calculate whatever measure you deem appropriate for better understanding
 \end{itemize}
+What intuition you can gather from these numbers?
 
 \section*{Task 2}
-
+One way to approach the problem of virus spread is to estimate the vulnerability of biologists' networks, for that we need to calculate four components:
+\begin{itemize}
+\item proportion of nodes that belong to the SCC (Strongly Connected Component), i.e. nodes with non-zero indegree and outdegree 
+\item proportion of nodes with zero indegree 
+\item proportion of nodes with zero outdegree
+\item proportion of disconnected components (zero   
 \section*{Task 3}
-write your own function that generates erdos-renyi random graph with input parameter p, where p is the probability of edge creation. generate the graph with 50 nodes and at least five different p values. Plot the result.  
-\section*{Task 4}
 
+\section*{Task 4}
+write your own function that generates erdos-renyi random graph with input parameter p, where p is the probability of edge creation. generate the graph with 50 nodes and at least five different p values. Plot the result.  
 \section*{Task 5}
 Community detection
 \section*{Task 6}
