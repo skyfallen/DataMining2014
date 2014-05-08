@@ -1,0 +1,103 @@
+\documentclass{article}
+
+\usepackage{courier}
+\usepackage{graphicx} % Required for the inclusion of images
+\usepackage{listings}
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{subcaption}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage[toc,page]{appendix}
+\usepackage{dcolumn}
+\usepackage{pdflscape}
+\usepackage{hyperref}
+\usepackage{framed}
+\usepackage[english]{babel}
+\usepackage{soul}
+\usepackage{caption}
+\usepackage{amsfonts}
+\usepackage{MnSymbol,wasysym}
+\captionsetup[figure]{labelformat=empty}%
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+\renewcommand{\labelenumi}{\alph{enumi}.} % Make numbering in the enumerate environment by letter rather than number (e.g. section 6)
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=R,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true
+  tabsize=3
+}
+
+\newcommand{\footlabel}[2]{%
+    \addtocounter{footnote}{1}%
+    \footnotetext[\thefootnote]{%
+        \addtocounter{footnote}{-1}%
+        \refstepcounter{footnote}\label{#1}%
+        #2%
+    }%
+    $^{\ref{#1}}$%
+}
+
+\newcommand{\footref}[1]{%
+    $^{\ref{#1}}$%
+}
+
+%\usepackage[colorlinks]{hyperref}
+\hypersetup{linkcolor=DarkRed}
+\hypersetup{urlcolor=DarkBlue}
+\usepackage{cleveref}
+
+\title{Data Mining\\Homework Assignment \#11} % Title
+
+\author{Dmytro Fishman, Anna Leontjeva and Jaak Vilo} % Author name
+
+\begin{document}
+
+\maketitle % Insert the title, author and date 
+The goal for this homework is to get you started with basics of social network analysis. There are many different network analysis tools. Choose the one you prefer. Some of the well-known tools and packages are: NetworkX and igraph for Python, JUNG for Java, igraph for R, Gephi for the visualization with some built-in calculations and even NodeXL free template for Excel.
+Most of the exercises require you to check presentation slides for the definitions. 
+
+\section*{Task 1}
+To start with, open SNAP page by Jure Leskovec with the collection of some graphs. Take a look at the data and the description:\\ \url{http://snap.stanford.edu/data/wiki-Vote.html}.\\ 
+Find the subsection files and download Wiki\-Vote.txt.gz.
+Load the data using one of the chosen tools. Note that the network is directed. Calculate the list of the statistics:
+\begin{itemize}
+\item number of nodes in the network
+\item number of edges in the network
+\item number of nodes with a self-loop
+\item number of mutual connections or \emph{reciprocated} edges, i.e if there is a directed edge from node a to node b, there is also an edge from b to a. 
+\item number of nodes with zero indegree
+\item number of nodes with zero outdegree
+\item number of nodes with the total degree (both in and out) greater than 30.
+\end{itemize}
+
+\section*{Task 2}
+
+\section*{Task 3}
+write your own function that generates erdos-renyi random graph with input parameter p, where p is the probability of edge creation. generate the graph with 50 nodes and at least five different p values. Plot the result.  
+\section*{Task 4}
+
+\section*{Task 5}
+Community detection
+\section*{Task 6}
+
+
+ 
+\end{document}

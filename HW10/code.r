@@ -37,7 +37,8 @@ plot.classifier = function(w, w0=0) {
 df = function(w, data) {
   r = c(0,0)
   # You have to change following line so only misclassified observations are included
-  misclassified = 
+  #misclassified = 
+  misclassified = which(sign(data$X%*%w)!=data$y)
   for (i in misclassified) {
     r = r + data$X[i,]*data$y[i]
   }
