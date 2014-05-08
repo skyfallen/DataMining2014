@@ -71,11 +71,16 @@
 \begin{document}
 
 \maketitle % Insert the title, author and date 
-The goal for this homework is to get you started with basics of social network analysis. %There are many different network analysing tools. Choose the one you prefer. Some of the well-known tools and packages are: NetworkX and igraph for Python, JUNG for Java, igraph for R, Gephi for the visualization with some built-in calculations and even NodeXL free template for Excel.
+The goal for this homework is to get you started with basics of social network analysis. 
+
+There are many different network analyzing tools. Choose the one you prefer. Some of the well-known tools and packages are: NetworkX and igraph for Python, JUNG for Java, igraph for R, Gephi for the visualization with some built-in calculations and even NodeXL free template for Excel.
+
 Most of the exercises require you to check presentation slides for the definitions.
 
 \section*{Task 1}
-In this task, we will use the techniques of Social Network analysis to study how virus spread. Let us assume terrified biologists came to the Institute of Computer Science seeking for a help. Their email network was infected by the virus that was created by the student that received 'B' for his Master's Thesis and got offended. You are trying poor biologists to estimate the worst case scenario of virus spread. Biologists observed that if virus infects a node, it always infects all its immediate neighbors if they are not already infected (it has 100\% of infection rate). Also we know that virus spreads only along the edge direction (e.g. if virus infects node A, which only has an incoming edge from node B, node B will not be infected). 
+In this task, we will use the techniques of Social Network analysis to study a virus spread. Imagine the following situation: terrified biologists came to the Institute of Computer Science seeking for a help. Their email network was infected by the virus that was created by the student that received 'B' for his Master's Thesis and got offended. Your goal is to help poor biologists to estimate the worst-case scenario of this virus spread. 
+
+Biologists observed that if virus infects a node, it always infects all its immediate neighbors, if they are not already infected (100\% of infection rate). Also, we know that virus travels only along the edge direction (e.g. if virus infects node A, which only has an incoming edge from node B, node B will not be infected). 
 
 Biologists provided you with their directed anonymous email network that you can access on the course web-page. 
   
@@ -93,12 +98,23 @@ Load the data. To get the first insights about biologists' network, calculate th
 What intuition you can gather from these numbers?
 
 \section*{Task 2}
-One way to approach the problem of virus spread is to estimate the vulnerability of biologists' networks, for that we need to calculate four components:
+Next step is to estimate the vulnerability of biologists' networks. We will approach this problem by using bow-tie structure. You can read about it here: 
+
+\url{http://www.nature.com/nature/journal/v405/n6783/full/405113a0.html} \\or more thoroughly here: \url{http://snap.stanford.edu/class/cs224w-readings/broder00bowtie.pdf}.
+
+Let us take a closer look at the following diagram:
+\begin{figure}[H]
+\centering
+    \includegraphics[width=0.8\textwidth]{bowtie}
+\end{figure}
+Ignore tendrils and tubes in this task. For the virus spread we want to find four components of the network:
+
 \begin{itemize}
-\item proportion of nodes that belong to the SCC (Strongly Connected Component), i.e. nodes with non-zero indegree and outdegree 
-\item proportion of nodes with zero indegree 
-\item proportion of nodes with zero outdegree
-\item proportion of disconnected components (zero   
+\item proportion of nodes that belong to the SCC (Strongly Connected Component) (\emph{CORE} of the network) 
+\item proportion of nodes that belong to IN component (nodes that belong to the weak connected component and have zero indegree)
+\item proportion of nodes that belong to OUT component (nodes that belong to the weak connected component and have zero outdegree)
+\item proportion of disconnected components (do not belong to the weak component)   
+\end{itemize}
 \section*{Task 3}
 
 \section*{Task 4}
