@@ -18,6 +18,7 @@
 \usepackage{caption}
 \usepackage{amsfonts}
 \usepackage{MnSymbol,wasysym}
+\usepackage{algorithmic}
 \captionsetup[figure]{labelformat=empty}%
 
 \setlength\parindent{0pt} % Removes all indentation from paragraphs
@@ -98,23 +99,34 @@ Load the data. To get the first insights about biologists' network, calculate th
 What intuition you can gather from these numbers?
 
 \section*{Task 2}
-Next step is to estimate the vulnerability of biologists' networks. We will approach this problem by using bow-tie structure. You can read about it here: 
+Next, biologists ask us to estimate the vulnerability of their network. In order to measure it, you have to calculate average virus spread assuming that the initial infected node is chosen uniformly at random. What is the probability that virus will affect at least 30\% of the network nodes ('large scale' epidemics emerges).
 
-\url{http://www.nature.com/nature/journal/v405/n6783/full/405113a0.html} \\or more thoroughly here: \url{http://snap.stanford.edu/class/cs224w-readings/broder00bowtie.pdf}.
-
-Let us take a closer look at the following diagram:
+For that, consider the following simplified version of the graph. 
 \begin{figure}[H]
-\centering
-    \includegraphics[width=0.8\textwidth]{bowtie}
+    \centering
+    \includegraphics[width=1\textwidth]{Graph.png}
+    \caption{Figure: simplified version of the graph}
+    \label{fig:awesome_image}
 \end{figure}
-Ignore tendrils and tubes in this task. For the virus spread we want to find four components of the network:
 
+\begin{enumerate}
+\item According to the virus transmission rule, calculate number of infected nodes if the initially infected was:
 \begin{itemize}
-\item proportion of nodes that belong to the SCC (Strongly Connected Component) (\emph{CORE} of the network) 
-\item proportion of nodes that belong to IN component (nodes that belong to the weak connected component and have zero indegree)
-\item proportion of nodes that belong to OUT component (nodes that belong to the weak connected component and have zero outdegree)
-\item proportion of disconnected components (do not belong to the weak component)   
+\item  the node 1
+\item the node 8
+\item the node 12
+\end{itemize} 
+\item Here we introduce the notion of Bow Tie structure (\url{xx}), which is a recent concept that grasps the essence of both biological networks and the representation of links in the Internet. It divides a graph into 4 basic components (and two secondary that we omit for this task):
+\begin{itemize}
+\item Strongly connected component (SCC), which is the core of the graph, where all nodes can reach one other along directed links
+\item  ''IN`` component that consists of nodes that can reach the SCC, but cannot be reached from it.
+\item ''OUT`` component that consists of nodes that are accessible from the SCC, but do not link back to it
+\item disconnected components are those nodes that are not connected to neither IN, OUT or SCC components. 
 \end{itemize}
+For more information on described above graph structure read article by Andrei Broder et al.: \url{http://snap.stanford.edu/class/cs224w-readings/broder00bowtie.pdf}
+In this part your task is to calculate the proportion of nodes that belong to SCC, IN, OUT and disconnected components.
+\item Based on estimated proportions in the part 'b', calculate the probability of emerging a 'large scale' epidemics (at least 30\% of the network nodes infected) given that the initial infected node is chosen uniformly at random from the network nodes.
+\end{enumerate}
 \section*{Task 3}
 
 \section*{Task 4}
