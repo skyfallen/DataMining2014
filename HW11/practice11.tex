@@ -128,7 +128,7 @@ In this part, your task is to calculate the proportion of nodes that belong to S
 \item Based on estimated proportions in the part 'b', calculate the probability of emerging a 'large scale' epidemics (at least 30\% of the network nodes infected) given that the initial infected node is chosen uniformly at random from the network nodes.
 \end{enumerate}
 \section*{Task 3}
-In this task we will explore generative mathematical models that try to simulate real-world network according to some characteristics. We will generate three models and compare it with the real-world graph of an academic collaboration network. For this:
+In this task we will explore generative mathematical models that try to simulate real-world network according to some characteristics. We will generate three models and compare it with the real-world graph of an academic collaboration network. For that:
 \begin{itemize}
 \item generate random graph according to Erdos-Renyi model with 5242 nodes and 10484 edges 
 \begin{lstlisting}
@@ -137,7 +137,7 @@ erdos.renyi.game(n = 5242, 10484, type = c("gnm"))
 #Hint for python library NetworkX: 
 gnm_random_graph(5242, 10484)
 \end{lstlisting}
-\item generate a graph with small world model (Watts and Strogatz model) so that it has 5242 nodes and 10484 edges. 
+\item generate a graph with a small world model (Watts and Strogatz model) so that it has 5242 nodes and 10484 edges. 
 \begin{lstlisting}
 #In R use function
 watts.strogatz.game(1, 5242, 2, 0.5)
@@ -172,8 +172,8 @@ As an example, you may introduce a notion of nodes dying after some time.
 Note that without implementation only half of the point will be given.
 
 \section*{Task 6}
-In this bonus task you will help biologists to fight with the virus epidemic. Using the data email\_virus.txt, calculate the same components as in task 2b and calculate the probability of emerging a 'large scale' epidemics as in task 2c. Hint: you may want to use BFS algorithm to estimate IN and OUT components.
+In this bonus task you will help biologists to fight the virus from the task one and two. Use data email\_virus.txt, calculate the same components as in task 2b and the probability of emerging a 'large scale' epidemics as in task 2c. Hint: you may want to use BFS algorithm to estimate IN and OUT components.
 \medskip
 \\
-In this homework we were inspired and adapted some of the materials from Juri Leskovec stanford course ''Social and Information Network Analysis``. 
+This homework was inspired by Juri Leskovec stanford course ''Social and Information Network Analysis``. 
 \end{document}
