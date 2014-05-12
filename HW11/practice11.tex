@@ -19,6 +19,10 @@
 \usepackage{amsfonts}
 \usepackage{MnSymbol,wasysym}
 \usepackage{algorithmic}
+\usepackage{mathtools}
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
 \captionsetup[figure]{labelformat=empty}%
 
 \setlength\parindent{0pt} % Removes all indentation from paragraphs
@@ -157,9 +161,9 @@ Plot the degree distribution of all three networks both on original and log-log 
  
 \section*{Task 4}
 The local clustering coefficient for a node $v$ is defined as:
-$$C_i = \frac{2\|e_i\|}{k_i(k_i-1)}$$
+$$C_i = \frac{2\abs{e_i}}{k_i(k_i-1)}$$
 where $k_i$ is the degree of $v_i$ and $e_i$ is the number of edges between the neighbors of $v_i$. Your task is to find \emph{average clustering coefficient} that is defined as 
-$$C = \frac{1}{\|V\|}\sum_{i\in V}C_i$$
+$$C = \frac{1}{\abs{V}}\sum_{i\in V}C_i$$
 Note that if a node has 0 or 1 neighbor, we will ignore it.
 Calculate average clustering coefficient for all four networks in the previous task. Compare them and describe the difference. 
 
