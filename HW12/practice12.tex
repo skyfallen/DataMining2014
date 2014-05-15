@@ -76,44 +76,42 @@
 \begin{document}
 
 \maketitle % Insert the title, author and date 
-The goal for this homework is to get you started with basics of social network analysis. 
 
 \section*{Task 1}
-State why for the integration of multiple heterogeneous information sources, many
+State why for the integration of multiple heterogeneous information sources many
 companies in industry prefer the update-driven approach (which constructs and uses
 data warehouses), rather than the query-driven approach (which applies wrappers and
 integrators). Describe situations where the query-driven approach is preferable over
 the update-driven approach.
 
 \section*{Task 2}
-A data warehouse can be modeled by either a star schema or a snowﬂake schema.
-Brieﬂy describe the similarities and the differences of the two models, and then
+A data warehouse can be modeled by either a star schema or a snowflake schema.
+Briefl�y describe the similarities and the differences of the two models, and then
 analyze their advantages and disadvantages with regard to one another. Give your
-opinion of which might be more empirically useful and state the reasons behind
+opinion of which might be more useful on practice and state the reasons behind
 your answer.
 
 \section*{Task 3}
-A data warehouse can be modeled by either a star schema or a snowﬂake schema.
-Brieﬂy describe the similarities and the differences of the two models, and then
-analyze their advantages and disadvantages with regard to one another. Give your
-opinion of which might be more empirically useful and state the reasons behind
-your answer.
+Explain the terms slice and dice, drill-down and roll-up. Provide examples and/or illustrations
  
 \section*{Task 4}
-Suppose that a data warehouse consists of the four dimensions, date, spectator, location, and game, and the two measures, count and charge, where charge is the fare that
-a spectator pays when watching a game on a given date. Spectators may be students,
+Suppose that a data warehouse consists of the four dimensions: date, visitor, location, and movie, and the two measures, count and charge, where charge is the fare that
+a visitor pays when watching a movie on a given date. Visitors may be students,
 adults, or seniors, with each category having its own charge rate.
-(a) Draw a star schema diagram for the data warehouse.
-(b) Starting with the base cuboid [date, spectator, location, game], what speciﬁc OLAP
+\begin{enumerate}
+\item Draw a star schema diagram for the data warehouse.
+\item Starting with the base cuboid [date, visitor, location, movie], what specifi�c OLAP
 operations should one perform in order to list the total charge paid by student
-spectators at GM Place in 2004?
+visitors at Cinamon Cinema in 2004?
+\end{enumerate}
 
 \section*{Task 5}
-Explain the terms slice and dice, drill-down and roll-up. Provide examples, e.g. from the census data analysis.
+Rewrite the following query by replacing GROUP BY CUBE(...) clause into an equivalent query using UNION and simple GROUP BY:
+\begin{verbatim}
+SELECT product, year, city, sum(price*vol)
+FROM Orders
+GROUP BY CUBE(product, year, city);
+\end{verbatim}
 
 \section*{Task 6}
-In this bonus task you will help biologists to fight the virus from the task one and two. Use data email\_virus.txt, calculate the same components as in task 2b and the probability of emerging a 'large scale' epidemics as in task 2c. Hint: you may want to use BFS algorithm to estimate IN and OUT components.
-\medskip
-\\
-This homework was inspired by Juri Leskovec stanford course ''Social and Information Network Analysis``. 
 \end{document}
