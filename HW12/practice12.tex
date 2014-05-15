@@ -1,0 +1,119 @@
+\documentclass{article}
+
+\usepackage{courier}
+\usepackage{graphicx} % Required for the inclusion of images
+\usepackage{listings}
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{subcaption}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage[toc,page]{appendix}
+\usepackage{dcolumn}
+\usepackage{pdflscape}
+\usepackage{hyperref}
+\usepackage{framed}
+\usepackage[english]{babel}
+\usepackage{soul}
+\usepackage{caption}
+\usepackage{amsfonts}
+\usepackage{MnSymbol,wasysym}
+\usepackage{algorithmic}
+\usepackage{mathtools}
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+\captionsetup[figure]{labelformat=empty}%
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+\renewcommand{\labelenumi}{\alph{enumi}.} % Make numbering in the enumerate environment by letter rather than number (e.g. section 6)
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=R,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true
+  tabsize=3
+}
+
+\newcommand{\footlabel}[2]{%
+    \addtocounter{footnote}{1}%
+    \footnotetext[\thefootnote]{%
+        \addtocounter{footnote}{-1}%
+        \refstepcounter{footnote}\label{#1}%
+        #2%
+    }%
+    $^{\ref{#1}}$%
+}
+
+\newcommand{\footref}[1]{%
+    $^{\ref{#1}}$%
+}
+
+%\usepackage[colorlinks]{hyperref}
+\hypersetup{linkcolor=DarkRed}
+\hypersetup{urlcolor=DarkBlue}
+\usepackage{cleveref}
+
+\title{Data Mining\\Homework Assignment \#12} % Title
+
+\author{Dmytro Fishman, Anna Leontjeva and Jaak Vilo} % Author name
+
+\begin{document}
+
+\maketitle % Insert the title, author and date 
+The goal for this homework is to get you started with basics of social network analysis. 
+
+\section*{Task 1}
+State why for the integration of multiple heterogeneous information sources, many
+companies in industry prefer the update-driven approach (which constructs and uses
+data warehouses), rather than the query-driven approach (which applies wrappers and
+integrators). Describe situations where the query-driven approach is preferable over
+the update-driven approach.
+
+\section*{Task 2}
+A data warehouse can be modeled by either a star schema or a snowﬂake schema.
+Brieﬂy describe the similarities and the differences of the two models, and then
+analyze their advantages and disadvantages with regard to one another. Give your
+opinion of which might be more empirically useful and state the reasons behind
+your answer.
+
+\section*{Task 3}
+A data warehouse can be modeled by either a star schema or a snowﬂake schema.
+Brieﬂy describe the similarities and the differences of the two models, and then
+analyze their advantages and disadvantages with regard to one another. Give your
+opinion of which might be more empirically useful and state the reasons behind
+your answer.
+ 
+\section*{Task 4}
+Suppose that a data warehouse consists of the four dimensions, date, spectator, location, and game, and the two measures, count and charge, where charge is the fare that
+a spectator pays when watching a game on a given date. Spectators may be students,
+adults, or seniors, with each category having its own charge rate.
+(a) Draw a star schema diagram for the data warehouse.
+(b) Starting with the base cuboid [date, spectator, location, game], what speciﬁc OLAP
+operations should one perform in order to list the total charge paid by student
+spectators at GM Place in 2004?
+
+\section*{Task 5}
+Explain the terms slice and dice, drill-down and roll-up. Provide examples, e.g. from the census data analysis.
+
+\section*{Task 6}
+In this bonus task you will help biologists to fight the virus from the task one and two. Use data email\_virus.txt, calculate the same components as in task 2b and the probability of emerging a 'large scale' epidemics as in task 2c. Hint: you may want to use BFS algorithm to estimate IN and OUT components.
+\medskip
+\\
+This homework was inspired by Juri Leskovec stanford course ''Social and Information Network Analysis``. 
+\end{document}
